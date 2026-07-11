@@ -411,19 +411,22 @@ function switchDetailTab(tab) {
 
 function buildDetailHTML(city, data) {
   const costRange = (city.costMin&&city.costMax) ? `${city.costMin} ~ ${city.costMax}` : fmt(city.totalCost);
-  const hasCosts  = data && data.costs  && data.costs.length;
+  const hasCosts  = data && data.costs && data.costs.length;
   const hasGolf   = data && data.golfCourses && data.golfCourses.length;
   const hasSched  = data && data.weeklySchedule && data.weeklySchedule.length;
+  const hasMonth  = data && data.monthPlan && data.monthPlan.length;
+  const hasHigh   = data && data.highlights && data.highlights.length;
+  const hasFood   = data && data.foodGuide && data.foodGuide.length;
 
   return `
   <button class="detail-back" onclick="showView('featured')">← 거점도시 목록</button>
 
   <div class="detail-hero editable" data-edit="city-${city.key}">
-    <div class="detail-hero-eyebrow">${city.country||''} · ${city.continent||''}</div>
-    <h2>${city.name}${city.nameEn?' ('+city.nameEn+')':''}</h2>
+    <div class="detail-hero-eyebrow">${city.country||''} · ${city.continent||''} · ${city.theme||''}</div>
+    <h2>${city.name}${city.nameEn?' <span style="font-size:16px;font-weight:400;color:rgba(255,255,255,.6)">('+city.nameEn+')</span>':''}</h2>
     <div class="detail-desc">${city.description||''}</div>
     <div class="detail-quick-stats">
-      <div><div class="dqs">월 체류비 (2인)</div><div class="dqs-v">${costRange}</div></div>
+      <div><div class="dqs">월 체류비 (2인)</div><div class="dqs-v" style="color:var(--gold-light)">${costRange}</div></div>
       <div><div class="dqs">최적 계절</div><div class="dqs-v">${city.season||'-'}</div></div>
       <div><div class="dqs">비자</div><div class="dqs-v">${city.visa||'-'}</div></div>
       <div><div class="dqs">인터넷</div><div class="dqs-v">${city.internet||'-'}</div></div>
@@ -433,9 +436,10 @@ function buildDetailHTML(city, data) {
   </div>
 
   <div class="detail-tabs">
-    <button class="detail-tab-btn active" data-tab="overview" onclick="switchDetailTab('overview')">📊 비용 개요</button>
-    ${hasGolf ?`<button class="detail-tab-btn" data-tab="golf"  onclick="switchDetailTab('golf')">⛳ 골프코스</button>`:''}
-    ${hasSched?`<button class="detail-tab-btn" data-tab="sched" onclick="switchDetailTab('sched')">📅 주간 스케줄</button>`:''}
+    <button class="detail-tab-btn active" data-tab="overview" onclick="switchDetailTab('overview')">💰 비용 개요</button>
+    ${(hasMonth||hasHigh)?`<button class="detail-tab-btn" data-tab="plan" onclick="switchDetailTab('plan')">📅 한달 플랜</button>`:''}
+    ${hasGolf?`<button class="detail-tab-btn" data-tab="golf" onclick="switchDetailTab('golf')">⛳ 골프코스</button>`:''}
+    ${hasFood?`<button class="detail-tab-btn" data-tab="food" onclick="switchDetailTab('food')">🍽 식당·음식</button>`:''}
     <button class="detail-tab-btn" data-tab="tips" onclick="switchDetailTab('tips')">💡 현지 팁</button>
   </div>
 
@@ -449,44 +453,103 @@ function buildDetailHTML(city, data) {
           <span class="cost-incl ${r.included?'in':'out'}">${r.included?'포함':'별도'}</span>
           <div class="cost-amt">${typeof r.amount==='number'?fmt(r.amount):r.amount}</div>
         </div>
-        ${r.note?`<div style="padding:0 16px 5px;font-size:11px;color:var(--text-muted)">${r.note}</div>`:''}`
+        ${r.note?`<div style="padding:0 16px 6px;font-size:11px;color:var(--text-muted)">${r.note}</div>`:''}`
       ).join('')}
     </div>` : `<div class="tips-box"><h4>비용 정보</h4><div class="tips-text">월 체류비: ${costRange} (2인 기준)</div></div>`}
     ${data&&data.lodging?`<div class="lodging-box"><h4>🏠 숙소 추천</h4><p>${data.lodging}</p></div>`:''}
   </div>
 
+  ${(hasMonth||hasHigh)?`
+  <div class="detail-tab-panel" id="dtab-plan">
+    ${hasMonth?`
+    <div class="panel" style="margin-bottom:16px">
+      <div class="panel-head"><div class="panel-head-title">📅 4주 한달 플랜</div></div>
+      <div class="month-plan-grid">
+        ${data.monthPlan.map(w=>`
+          <div class="month-week">
+            <div class="month-week-head">
+              <div class="month-week-num">${w.week}주차</div>
+              <div class="month-week-theme">${w.theme}</div>
+            </div>
+            <ul class="month-week-acts">
+              ${(w.activities||[]).map(a=>`<li>${a}</li>`).join('')}
+            </ul>
+          </div>`).join('')}
+      </div>
+    </div>`:''}
+    ${hasHigh?`
+    <div class="panel" style="margin-bottom:16px">
+      <div class="panel-head"><div class="panel-head-title">📍 꼭 가야 할 명소 ${data.highlights.length}곳</div></div>
+      ${data.highlights.map(h=>`
+        <div class="highlight-row">
+          <div class="highlight-main">
+            <div class="highlight-name">${h.name}</div>
+            <span class="highlight-type">${h.type}</span>
+            <div class="highlight-desc">${h.desc}</div>
+          </div>
+          <div class="highlight-tip">💡 ${h.tip}</div>
+        </div>`).join('')}
+    </div>`:''}
+    ${hasSched?`
+    <div class="panel" style="margin-bottom:16px">
+      <div class="panel-head"><div class="panel-head-title">📆 추천 주간 스케줄</div></div>
+      ${data.weeklySchedule.map(s=>`
+        <div class="sched-row">
+          <div class="sched-day">${s.day}</div>
+          <div class="sched-am">${s.am||''}</div>
+          <div style="color:var(--text-muted);font-size:12px">${s.pm||''}</div>
+        </div>`).join('')}
+    </div>`:''}
+  </div>`:''}
+
   ${hasGolf?`
   <div class="detail-tab-panel" id="dtab-golf">
     <div class="panel" style="margin-bottom:16px">
-      <div class="panel-head"><div class="panel-head-title">⛳ 추천 골프코스</div></div>
+      <div class="panel-head"><div class="panel-head-title">⛳ 추천 골프코스 ${data.golfCourses.length}곳</div></div>
       ${data.golfSummary?`<div class="golf-summary-box">${data.golfSummary}</div>`:''}
-      ${data.golfCourses.map(g=>`
+      ${data.golfCourses.map((g,i)=>`
         <div class="golf-row">
-          <div><div class="golf-name">${g.name}</div><div class="golf-feature">${g.feature||''}</div></div>
-          <div style="text-align:right">
+          <div class="golf-num">${i+1}</div>
+          <div style="flex:1">
+            <div class="golf-name">${g.name}</div>
+            <div class="golf-feature">${g.feature||''}</div>
+          </div>
+          <div style="text-align:right;min-width:110px">
             <div class="golf-fee">${g.greenFee||'-'}</div>
-            <div style="font-size:10.5px;color:var(--text-muted)">${g.cart||''}</div>
+            <div style="font-size:10.5px;color:var(--text-muted);margin-top:2px">${g.cart||''}</div>
           </div>
         </div>`).join('')}
     </div>
   </div>`:''}
 
-  ${hasSched?`
-  <div class="detail-tab-panel" id="dtab-sched">
+  ${hasFood?`
+  <div class="detail-tab-panel" id="dtab-food">
     <div class="panel" style="margin-bottom:16px">
-      <div class="panel-head"><div class="panel-head-title">📅 추천 주간 스케줄</div></div>
-      ${data.weeklySchedule.map(s=>`
-        <div class="sched-row">
-          <div class="sched-day">${s.day}</div>
-          <div class="sched-am">${s.am||''}</div>
-          <div>${s.pm||''}</div>
+      <div class="panel-head"><div class="panel-head-title">🍽 현지 먹거리 가이드</div></div>
+      ${data.foodGuide.map(f=>`
+        <div class="food-row">
+          <div class="food-main">
+            <div class="food-name">${f.name}</div>
+            <span class="food-type">${f.type}</span>
+            <div class="food-note">${f.note}</div>
+          </div>
+          <div class="food-meta">
+            <div class="food-price">${f.price}</div>
+            <div class="food-where">📍 ${f.where}</div>
+          </div>
         </div>`).join('')}
     </div>
   </div>`:''}
 
   <div class="detail-tab-panel" id="dtab-tips">
-    ${data&&data.tips?`<div class="tips-box"><h4>💡 현지 핵심 팁</h4><div class="tips-text">${data.tips.replace(/·\s/g,'<br>· ')}</div></div>`
-    :'<div class="tips-box"><h4>💡 팁</h4><div class="tips-text">현지 정보를 수집 중입니다.</div></div>'}
+    ${data&&data.tips?`
+    <div class="tips-box">
+      <h4>💡 현지 핵심 팁 (${data.tips.split(' · ').length}가지)</h4>
+      <div class="tips-list">
+        ${data.tips.split(' · ').map(t=>`<div class="tips-item">${t}</div>`).join('')}
+      </div>
+    </div>`:
+    '<div class="tips-box"><h4>💡 팁</h4><div class="tips-text">현지 정보를 수집 중입니다.</div></div>'}
   </div>`;
 }
 
