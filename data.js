@@ -19,20 +19,439 @@ window.INITIAL_DATA = {
     domestic1st: "제주 성산"
   },
 
-  yearlyPlan: [{"year": 1, "priority": "★★★ HIGH", "region": "동아시아·동남아", "cityCount": 10, "quarter": "Q1/Q3/Q4", "cities": "가고시마·오키나와·치앙마이", "cost": "300~850만"}, {"year": 2, "priority": "★★★ HIGH", "region": "유럽 지중해", "cityCount": 10, "quarter": "Q2", "cities": "말라가·파로·피렌체", "cost": "500~750만"}, {"year": 3, "priority": "★★☆ MED", "region": "북미·하와이", "cityCount": 10, "quarter": "Q1~Q4", "cities": "세도나·호놀룰루·골드코스트", "cost": "600만~1,699만"}, {"year": 4, "priority": "★★☆ MED", "region": "오세아니아·중미", "cityCount": 10, "quarter": "Q1/Q3", "cities": "골드코스트·퀸즈타운·에스카수", "cost": "450만~1,699만"}, {"year": 5, "priority": "★★☆ MED", "region": "대만·인니·서유럽", "cityCount": 10, "quarter": "Q2~Q4", "cities": "발리·니스·바덴바덴", "cost": "N/A"}, {"year": 6, "priority": "★☆☆ LOW", "region": "북서유럽·스위스", "cityCount": 10, "quarter": "Q2", "cities": "골웨이·루가노·잘츠부르크", "cost": "N/A"}, {"year": 7, "priority": "★☆☆ LOW", "region": "동유럽·중남미", "cityCount": 10, "quarter": "Q1~Q3", "cities": "부다페스트·두브로브니크·메델린", "cost": "N/A"}, {"year": 8, "priority": "★☆☆ LOW", "region": "남미·북아프리카", "cityCount": 10, "quarter": "Q1~Q2", "cities": "산티아고·마라케시·후르가다", "cost": "N/A"}, {"year": 9, "priority": "★☆☆ LOW", "region": "중동·남아공·동유럽", "cityCount": 10, "quarter": "Q3~Q4", "cities": "두바이·케이프타운·탈린", "cost": "N/A"}, {"year": 10, "priority": "★☆☆ LOW", "region": "북유럽·아이슬란드", "cityCount": 10, "quarter": "Q3", "cities": "베르겐·로바니에미·레이캬비크", "cost": "N/A"}],
+  yearlyPlan: [
+    {"year":1,"priority":"★★★ HIGH","theme":"동아시아·동남아 베이스캠프","region":"동아시아·동남아","cityCount":10,"quarter":"Q1/Q3/Q4","years":"2026~2027","cities":["일본 가고시마","일본 오키나와","태국 치앙마이","베트남 다낭","말레이시아 조호바루"],"cost":"300~850만","summary":"가장 접근성 좋은 아시아권. 일본 겨울 온천골프, 태국 건기 한달살기, 말레이시아 무제한골프 3코스 순환"},
+    {"year":2,"priority":"★★★ HIGH","theme":"유럽 지중해 골프 & 문화","region":"유럽 지중해","cityCount":10,"quarter":"Q2","years":"2027~2028","cities":["스페인 말라가","포르투갈 알가르브","이탈리아 피렌체","포르투갈 리스본","그리스 아테네"],"cost":"500~750만","summary":"4~6월 최적기. 말라가·알가르브는 유럽 3대 골프 메카. 피렌체에서 문화 한달살기 병행"},
+    {"year":3,"priority":"★★☆ MED","theme":"오세아니아·북미 프리미엄","region":"오세아니아·북미","cityCount":10,"quarter":"Q3","years":"2028~2029","cities":["호주 골드코스트","뉴질랜드 퀸스타운","미국 하와이","캐나다 밴쿠버","호주 브리즈번"],"cost":"600~1,699만","summary":"호주 7~9월 = 한국 봄날씨. 골드코스트 패키지(14박 골프포함 1,290만) → 퀸스타운 액티브"},
+    {"year":4,"priority":"★★☆ MED","theme":"중미·카리브해 은퇴자 낙원","region":"중미·남미","cityCount":10,"quarter":"Q1","years":"2029~2030","cities":["코스타리카 에스카수","파나마 파나마시티","멕시코 플라야 델 카르멘","콜롬비아 메데인","아르헨티나 부에노스아이레스"],"cost":"350~600만","summary":"코스타리카 Pensionado 비자 체험. 메데인 봄기후(연평균24°C). 부에노스아이레스 탱고+골프"},
+    {"year":5,"priority":"★★☆ MED","theme":"동남아 심화 & 서유럽 연계","region":"동남아·서유럽","cityCount":10,"quarter":"Q2~Q4","years":"2030~2031","cities":["인도네시아 발리","베트남 호치민","프랑스 니스","스페인 바르셀로나","포르투갈 포르투"],"cost":"250~700만","summary":"발리 짱구 디지털노마드 체험 후 유럽 2개월 연속 한달살기"},
+    {"year":6,"priority":"★☆☆ LOW","theme":"북·서유럽 & 스위스 하이킹","region":"북유럽·스위스","cityCount":10,"quarter":"Q2","years":"2031~2032","cities":["아일랜드 골웨이","스위스 루가노","오스트리아 잘츠부르크","체코 프라하","헝가리 부다페스트"],"cost":"500~750만","summary":"유럽 중부 한달씩 이동. 스위스 루가노 호수뷰, 프라하 역사도시 장기체류"},
+    {"year":7,"priority":"★☆☆ LOW","theme":"동유럽·중남미 가성비 탐험","region":"동유럽·중남미","cityCount":10,"quarter":"Q1~Q3","years":"2032~2033","cities":["조지아 트빌리시","불가리아 반스코","세르비아 베오그라드","페루 쿠스코","에콰도르 키토"],"cost":"280~500만","summary":"조지아·불가리아는 유럽 최저가 한달살기. 페루 쿠스코 고원 트레킹"},
+    {"year":8,"priority":"★☆☆ LOW","theme":"남미 전통 & 북아프리카 문화","region":"남미·북아프리카","cityCount":10,"quarter":"Q1~Q2","years":"2033~2034","cities":["칠레 산티아고","브라질 리우","우루과이 몬테비데오","모로코 마라케시","이집트 후르가다"],"cost":"380~600만","summary":"칠레 와인투어+골프, 마라케시 리아드 한달살기, 후르가다 홍해 다이빙"},
+    {"year":9,"priority":"★☆☆ LOW","theme":"중동·아프리카·동유럽","region":"중동·아프리카","cityCount":10,"quarter":"Q3~Q4","years":"2034~2035","cities":["남아공 케이프타운","케냐 나이로비","탄자니아 잔지바르","모리셔스 포트루이스","세이셸 빅토리아"],"cost":"400~900만","summary":"남아공 케이프타운 세계적 골프코스, 잔지바르 인도양 리조트 한달살기"},
+    {"year":10,"priority":"★☆☆ LOW","theme":"북유럽·극지방 버킷리스트","region":"북유럽·극지방","cityCount":10,"quarter":"Q3","years":"2035~2036","cities":["노르웨이 베르겐","핀란드 로바니에미","아이슬란드 레이캬비크","스웨덴 스톡홀름","덴마크 코펜하겐"],"cost":"900~1,500만","summary":"10년차 완주 기념 북유럽 피요르드·오로라 한달살기. 최고 버킷리스트 완성"}
+  ],
 
-  featuredCities: [{"key": "kagoshima", "city": "가고시마", "country": "🇯🇵 일본", "quarter": "Q1·1~2월", "lodging": "80~120만", "golfFee": "¥15,000~32,000/회", "golfWeek": "✅ 주3회", "costMin": "350만", "costMax": "550만", "rating": "★★★★★", "theme": "화산온천·골프", "continent": "아시아", "season": "겨울"}, {"key": "okinawa", "city": "오키나와", "country": "🇯🇵 일본", "quarter": "Q1·1~3월", "lodging": "250만", "golfFee": "¥15,000~28,000/회", "golfWeek": "✅ 주3회", "costMin": "700만", "costMax": "850만", "rating": "★★★★☆", "theme": "오션뷰리조트·골프", "continent": "아시아", "season": "겨울"}, {"key": "chiangmai", "city": "치앙마이", "country": "🇹🇭 태국", "quarter": "Q4·11~1월", "lodging": "110만", "golfFee": "11~15만원/회", "golfWeek": "✅ 주3회", "costMin": "300만", "costMax": "450만", "rating": "★★★★★", "theme": "하이킹·골프·마사지", "continent": "아시아", "season": "겨울"}, {"key": "johorbahru", "city": "조호바루", "country": "🇲🇾 말레이시아", "quarter": "Q1·1~3월", "lodging": "120만", "golfFee": "패키지", "golfWeek": "✅ 무제한", "costMin": "350만", "costMax": "500만", "rating": "★★★★★", "theme": "무제한골프·싱가포르연계", "continent": "아시아", "season": "겨울"}, {"key": "malaga", "city": "말라가(미하스)", "country": "🇪🇸 스페인", "quarter": "Q2·4~6월", "lodging": "150만", "golfFee": "€65~120/회", "golfWeek": "✅ 주2회+", "costMin": "550만", "costMax": "750만", "rating": "★★★★☆", "theme": "챔피언십골프·지중해", "continent": "유럽", "season": "봄"}, {"key": "algarve", "city": "알가르브(파로)", "country": "🇵🇹 포르투갈", "quarter": "Q2·4~6월", "lodging": "160만", "golfFee": "€70~150/회", "golfWeek": "✅ 주3회", "costMin": "500만", "costMax": "700만", "rating": "★★★★☆", "theme": "명문골프·요트", "continent": "유럽", "season": "봄"}, {"key": "goldcoast", "city": "골드코스트", "country": "🇦🇺 호주", "quarter": "Q3·7~9월", "lodging": "호텔포함", "golfFee": "패키지포함", "golfWeek": "✅ 14회/28박", "costMin": "1,290만", "costMax": "1,699만", "rating": "★★★★★", "theme": "럭셔리골프·비즈니스석", "continent": "오세아니아", "season": "봄"}, {"key": "costarica", "city": "산호세(에스카수)", "country": "🇨🇷 코스타리카", "quarter": "Q1·1~3월", "lodging": "150만", "golfFee": "$70~130/회", "golfWeek": "✅ 주2회", "costMin": "450만", "costMax": "600만", "rating": "★★★★☆", "theme": "Pensionado비자·웰니스", "continent": "중미", "season": "겨울"}],
+  featuredCities: [
+    {
+      "key": "kagoshima",
+      "name": "가고시마",
+      "nameEn": "Kagoshima",
+      "country": "🇯🇵 일본",
+      "continent": "아시아",
+      "season": "겨울",
+      "golf": true,
+      "totalCost": 4500000,
+      "visa": "무비자 90일",
+      "internet": "광속 LTE/5G",
+      "language": "일본어 (번역앱 충분)",
+      "description": "사쿠라지마 활화산을 배경으로 한 규슈 최남단 도시. 겨울에도 온화한 기후(평균15°C)와 세계적 온천, 30개 이상의 골프장을 보유. 서울~가고시마 직항 2시간, 은퇴자 선호도 1위 일본 도시.",
+      "theme": "화산온천·골프",
+      "quarter": "Q1·1~2월",
+      "rating": "★★★★★",
+      "costMin": "350만",
+      "costMax": "550만"
+    },
+    {
+      "key": "okinawa",
+      "name": "오키나와",
+      "nameEn": "Okinawa",
+      "country": "🇯🇵 일본",
+      "continent": "아시아",
+      "season": "겨울",
+      "golf": true,
+      "totalCost": 7500000,
+      "visa": "무비자 90일",
+      "internet": "광속 LTE/5G",
+      "language": "일본어 (영어 통용)",
+      "description": "일본 최남단 아열대 섬. 연평균 기온 23°C의 리조트 천국. 오션뷰 골프장에서 에메랄드 바다를 보며 라운드, 류큐 왕국 문화와 미식(아구돼지·오키나와소바) 체험. 렌터카 필수.",
+      "theme": "오션뷰리조트·골프",
+      "quarter": "Q1·1~3월",
+      "rating": "★★★★☆",
+      "costMin": "700만",
+      "costMax": "850만"
+    },
+    {
+      "key": "chiangmai",
+      "name": "치앙마이",
+      "nameEn": "Chiang Mai",
+      "country": "🇹🇭 태국",
+      "continent": "아시아",
+      "season": "겨울",
+      "golf": true,
+      "totalCost": 3500000,
+      "visa": "무비자 60일",
+      "internet": "LTE (시내 충분)",
+      "language": "태국어 (관광지 영어)",
+      "description": "해발 310m 북부 고원 도시. 겨울 건기(11~3월) 최고기온 28°C의 쾌적한 기후. 한달 숙박 110만원대, 마사지 1만원, 그린피 7만원으로 은퇴자 최고 가성비 도시. 불교 사원 300개+, 야시장, 쿠킹클래스.",
+      "theme": "하이킹·골프·마사지",
+      "quarter": "Q4·11~1월",
+      "rating": "★★★★★",
+      "costMin": "300만",
+      "costMax": "450만"
+    },
+    {
+      "key": "johorbahru",
+      "name": "조호바루",
+      "nameEn": "Johor Bahru",
+      "country": "🇲🇾 말레이시아",
+      "continent": "아시아",
+      "season": "겨울",
+      "golf": true,
+      "totalCost": 4200000,
+      "visa": "무비자 90일",
+      "internet": "LTE (양호)",
+      "language": "말레이어·영어 병용",
+      "description": "싱가포르 코즈웨이 맞은편 말레이시아 도시. 싱가포르 가격의 1/3로 생활하며 30분이면 싱가포르 쇼핑·의료 이용. 무제한 골프 패키지 월 60만원대, 현지 골프 클럽 회원급 혜택. MM2H 비자 적극 추천.",
+      "theme": "무제한골프·싱가포르연계",
+      "quarter": "Q1·1~3월",
+      "rating": "★★★★★",
+      "costMin": "350만",
+      "costMax": "500만"
+    },
+    {
+      "key": "malaga",
+      "name": "말라가 (미하스)",
+      "nameEn": "Malaga / Mijas",
+      "country": "🇪🇸 스페인",
+      "continent": "유럽",
+      "season": "봄",
+      "golf": true,
+      "totalCost": 6500000,
+      "visa": "쉥겐 90일",
+      "internet": "광속 광케이블",
+      "language": "스페인어 (관광지 영어)",
+      "description": "코스타 델 솔(태양의 해안) 중심 도시. 연 300일 맑은 날씨, 챔피언십 골프코스 30개+ 밀집. 미하스·마르베야 등 백색 마을 여행, 타파스 바 문화, 알함브라 당일 투어 가능. 유럽 골프 은퇴자 1번지.",
+      "theme": "챔피언십골프·지중해",
+      "quarter": "Q2·4~6월",
+      "rating": "★★★★☆",
+      "costMin": "550만",
+      "costMax": "750만"
+    },
+    {
+      "key": "algarve",
+      "name": "알가르브 (파로)",
+      "nameEn": "Algarve / Faro",
+      "country": "🇵🇹 포르투갈",
+      "continent": "유럽",
+      "season": "봄",
+      "golf": true,
+      "totalCost": 6000000,
+      "visa": "쉥겐 90일",
+      "internet": "광속 광케이블",
+      "language": "포르투갈어 (영어 통용)",
+      "description": "포르투갈 남부 황금 해안. 비달 사수아리나·피니스테라 등 세계 100대 코스 보유, 그린피 유럽 최저가. 파로 구시가 탐방, 카약 동굴투어, 신선한 해산물. 포르투갈은 유럽 생활비 최저권 국가.",
+      "theme": "명문골프·요트",
+      "quarter": "Q2·4~6월",
+      "rating": "★★★★☆",
+      "costMin": "500만",
+      "costMax": "700만"
+    },
+    {
+      "key": "goldcoast",
+      "name": "골드코스트",
+      "nameEn": "Gold Coast",
+      "country": "🇦🇺 호주",
+      "continent": "오세아니아",
+      "season": "봄",
+      "golf": true,
+      "totalCost": 14000000,
+      "visa": "eVisitor 90일",
+      "internet": "광속 NBN",
+      "language": "영어",
+      "description": "호주 동해안 72km 황금빛 해변. 7~9월 = 한국의 5월 날씨(최고24°C). 2인 28박 비즈니스석+호텔+골프 14회 올인클루시브 패키지 1,290~1,699만원. 서퍼스파라다이스·무비월드·드림월드 관광.",
+      "theme": "럭셔리골프·비즈니스석",
+      "quarter": "Q3·7~9월",
+      "rating": "★★★★★",
+      "costMin": "1,290만",
+      "costMax": "1,699만"
+    },
+    {
+      "key": "costarica",
+      "name": "산호세 (에스카수)",
+      "nameEn": "San Jose / Escazu",
+      "country": "🇨🇷 코스타리카",
+      "continent": "중미",
+      "season": "겨울",
+      "golf": true,
+      "totalCost": 5000000,
+      "visa": "무비자 90일 / Pensionado",
+      "internet": "LTE (도심 양호)",
+      "language": "스페인어 (에스카수 영어 통용)",
+      "description": "중미 은퇴자 낙원. Pensionado 비자($1,000/월 연금증명)로 의료·교통·오락 20% 할인. 에스카수는 고급 주거단지, 쇼핑몰·국제병원 도보권. 커피농장 투어, 열대우림 트레킹, 거북이 방류 체험.",
+      "theme": "Pensionado비자·웰니스",
+      "quarter": "Q1·1~3월",
+      "rating": "★★★★☆",
+      "costMin": "450만",
+      "costMax": "600만"
+    }
+  ],
 
-  overseasCities: [{"rank":1,"type":"overseas","name":"태국 치앙마이","nameEn":"Chiang Mai","continent":"아시아","season":"겨울","cost":1830000,"mentionIdx":100,"safetyIdx":85,"grade":"최우수","golf":true},{"rank":2,"type":"overseas","name":"베트남 다낭","nameEn":"Da Nang","continent":"아시아","season":"봄","cost":2080000,"mentionIdx":95,"safetyIdx":85,"grade":"최우수","golf":true},{"rank":3,"type":"overseas","name":"일본 후쿠오카","nameEn":"Fukuoka","continent":"아시아","season":"가을","cost":2950000,"mentionIdx":91,"safetyIdx":95,"grade":"최우수","golf":true},{"rank":4,"type":"overseas","name":"조지아 트빌리시","nameEn":"Tbilisi","continent":"유럽","season":"가을","cost":2890000,"mentionIdx":89,"safetyIdx":91,"grade":"최우수","golf":false},{"rank":5,"type":"overseas","name":"태국 방콕","nameEn":"Bangkok","continent":"아시아","season":"겨울","cost":2470000,"mentionIdx":98,"safetyIdx":75,"grade":"최우수","golf":true},{"rank":6,"type":"overseas","name":"일본 미야자키","nameEn":"Miyazaki","continent":"아시아","season":"겨울","cost":2770000,"mentionIdx":85,"safetyIdx":96,"grade":"우수","golf":true},{"rank":7,"type":"overseas","name":"말레이시아 쿠알라룸푸르","nameEn":"Kuala Lumpur","continent":"아시아","season":"겨울","cost":2290000,"mentionIdx":89,"safetyIdx":80,"grade":"우수","golf":true},{"rank":8,"type":"overseas","name":"헝가리 부다페스트","nameEn":"Budapest","continent":"유럽","season":"가을","cost":3720000,"mentionIdx":93,"safetyIdx":90,"grade":"우수","golf":false},{"rank":9,"type":"overseas","name":"체코 프라하","nameEn":"Prague","continent":"유럽","season":"봄","cost":4300000,"mentionIdx":95,"safetyIdx":93,"grade":"우수","golf":false},{"rank":10,"type":"overseas","name":"불가리아 반스코","nameEn":"Bansko","continent":"유럽","season":"겨울","cost":2830000,"mentionIdx":80,"safetyIdx":90,"grade":"우수","golf":false},{"rank":11,"type":"overseas","name":"말레이시아 페낭","nameEn":"Penang","continent":"아시아","season":"겨울","cost":2190000,"mentionIdx":84,"safetyIdx":83,"grade":"우수","golf":true},{"rank":12,"type":"overseas","name":"인도네시아 우붓","nameEn":"Bali Ubud","continent":"아시아","season":"여름","cost":3010000,"mentionIdx":94,"safetyIdx":83,"grade":"우수","golf":true},{"rank":13,"type":"overseas","name":"이집트 후르가다","nameEn":"Hurghada","continent":"아프리카","season":"겨울","cost":2380000,"mentionIdx":78,"safetyIdx":82,"grade":"우수","golf":false},{"rank":14,"type":"overseas","name":"베트남 나트랑","nameEn":"Nha Trang","continent":"아시아","season":"봄","cost":2210000,"mentionIdx":86,"safetyIdx":82,"grade":"우수","golf":true},{"rank":15,"type":"overseas","name":"태국 파타야","nameEn":"Pattaya","continent":"아시아","season":"겨울","cost":2220000,"mentionIdx":88,"safetyIdx":72,"grade":"우수","golf":true},{"rank":16,"type":"overseas","name":"인도네시아 발리","nameEn":"짱구","continent":"아시아","season":"여름","cost":3470000,"mentionIdx":99,"safetyIdx":80,"grade":"우수","golf":false},{"rank":17,"type":"overseas","name":"태국 푸켓","nameEn":"Phuket","continent":"아시아","season":"겨울","cost":2760000,"mentionIdx":92,"safetyIdx":78,"grade":"양호","golf":true},{"rank":18,"type":"overseas","name":"아르헨티나 부에노스아이레스","nameEn":"Buenos Aires","continent":"남미","season":"봄","cost":3760000,"mentionIdx":90,"safetyIdx":78,"grade":"양호","golf":true},{"rank":19,"type":"overseas","name":"말레이시아 조호바루","nameEn":"Johor Bahru","continent":"아시아","season":"겨울","cost":2110000,"mentionIdx":83,"safetyIdx":72,"grade":"양호","golf":true},{"rank":20,"type":"overseas","name":"대만 타이베이","nameEn":"Taipei","continent":"아시아","season":"가을","cost":3270000,"mentionIdx":87,"safetyIdx":94,"grade":"양호","golf":true},{"rank":21,"type":"overseas","name":"폴란드 크라쿠프","nameEn":"Krakow","continent":"유럽","season":"봄","cost":3490000,"mentionIdx":79,"safetyIdx":92,"grade":"양호","golf":false},{"rank":22,"type":"overseas","name":"말레이시아 코타키나발루","nameEn":"Kota Kinabalu","continent":"아시아","season":"봄","cost":2500000,"mentionIdx":82,"safetyIdx":81,"grade":"양호","golf":true},{"rank":23,"type":"overseas","name":"이집트 카이로","nameEn":"Cairo","continent":"아프리카","season":"겨울","cost":2210000,"mentionIdx":84,"safetyIdx":68,"grade":"양호","golf":false},{"rank":24,"type":"overseas","name":"포르투갈 포르투","nameEn":"Porto","continent":"유럽","season":"봄","cost":4930000,"mentionIdx":92,"safetyIdx":92,"grade":"양호","golf":true},{"rank":25,"type":"overseas","name":"베트남 하노이","nameEn":"Hanoi","continent":"아시아","season":"가을","cost":2130000,"mentionIdx":85,"safetyIdx":73,"grade":"양호","golf":true},{"rank":26,"type":"overseas","name":"베트남 호치민","nameEn":"Ho Chi Minh City","continent":"아시아","season":"겨울","cost":2310000,"mentionIdx":90,"safetyIdx":70,"grade":"양호","golf":true},{"rank":27,"type":"overseas","name":"남아공 케이프타운","nameEn":"Cape Town","continent":"아프리카","season":"봄","cost":3880000,"mentionIdx":90,"safetyIdx":70,"grade":"양호","golf":true},{"rank":28,"type":"overseas","name":"조지아 바투미","nameEn":"Batumi","continent":"유럽","season":"여름","cost":2790000,"mentionIdx":72,"safetyIdx":89,"grade":"양호","golf":false},{"rank":29,"type":"overseas","name":"필리핀 클락","nameEn":"Clark","continent":"아시아","season":"겨울","cost":2270000,"mentionIdx":80,"safetyIdx":75,"grade":"양호","golf":true},{"rank":30,"type":"overseas","name":"콜롬비아 메데인","nameEn":"Medellin","continent":"남미","season":"봄","cost":3660000,"mentionIdx":93,"safetyIdx":65,"grade":"양호","golf":false},{"rank":31,"type":"overseas","name":"포르투갈 리스본","nameEn":"Lisbon","continent":"유럽","season":"봄","cost":5640000,"mentionIdx":97,"safetyIdx":90,"grade":"보통","golf":true},{"rank":32,"type":"overseas","name":"불가리아 소피아","nameEn":"Sofia","continent":"유럽","season":"가을","cost":3240000,"mentionIdx":76,"safetyIdx":84,"grade":"보통","golf":false},{"rank":33,"type":"overseas","name":"스페인 카나리아","nameEn":"테네리페","continent":"도서지역","season":"겨울","cost":4730000,"mentionIdx":86,"safetyIdx":91,"grade":"보통","golf":false},{"rank":34,"type":"overseas","name":"세르비아 베오그라드","nameEn":"Belgrade","continent":"유럽","season":"가을","cost":3340000,"mentionIdx":74,"safetyIdx":85,"grade":"보통","golf":false},{"rank":35,"type":"overseas","name":"뉴질랜드 오클랜드","nameEn":"Auckland","continent":"오세아니아","season":"여름","cost":5820000,"mentionIdx":88,"safetyIdx":91,"grade":"보통","golf":true},{"rank":36,"type":"overseas","name":"모로코 마라케시","nameEn":"Marrakech","continent":"아프리카","season":"가을","cost":3470000,"mentionIdx":81,"safetyIdx":78,"grade":"보통","golf":true},{"rank":37,"type":"overseas","name":"호주 골드코스트","nameEn":"Gold Coast","continent":"오세아니아","season":"봄","cost":5780000,"mentionIdx":90,"safetyIdx":92,"grade":"보통","golf":true},{"rank":38,"type":"overseas","name":"페루 쿠스코","nameEn":"Cusco","continent":"남미","season":"겨울","cost":3490000,"mentionIdx":81,"safetyIdx":75,"grade":"보통","golf":false},{"rank":39,"type":"overseas","name":"뉴질랜드 크라이스트처치","nameEn":"Christchurch","continent":"오세아니아","season":"여름","cost":4940000,"mentionIdx":78,"safetyIdx":93,"grade":"보통","golf":true},{"rank":40,"type":"overseas","name":"호주 브리즈번","nameEn":"Brisbane","continent":"오세아니아","season":"봄","cost":5450000,"mentionIdx":85,"safetyIdx":92,"grade":"보통","golf":true},{"rank":41,"type":"overseas","name":"호주 멜버른","nameEn":"Melbourne","continent":"오세아니아","season":"봄","cost":6130000,"mentionIdx":92,"safetyIdx":91,"grade":"보통","golf":true},{"rank":42,"type":"overseas","name":"멕시코 멕시코시티","nameEn":"Mexico City","continent":"중미","season":"봄","cost":4000000,"mentionIdx":91,"safetyIdx":68,"grade":"보통","golf":false},{"rank":43,"type":"overseas","name":"크로아티아 스플리트","nameEn":"Split","continent":"유럽","season":"여름","cost":4960000,"mentionIdx":83,"safetyIdx":91,"grade":"보통","golf":false},{"rank":44,"type":"overseas","name":"호주 케언즈","nameEn":"Cairns","continent":"오세아니아","season":"겨울","cost":5120000,"mentionIdx":81,"safetyIdx":88,"grade":"보통","golf":true},{"rank":45,"type":"overseas","name":"몰타 발레타","nameEn":"Valletta","continent":"도서지역","season":"봄","cost":5040000,"mentionIdx":83,"safetyIdx":93,"grade":"보통","golf":false},{"rank":46,"type":"overseas","name":"포르투갈 아조레스 제도","nameEn":"Azores","continent":"도서지역","season":"여름","cost":4500000,"mentionIdx":73,"safetyIdx":94,"grade":"보통","golf":false},{"rank":47,"type":"overseas","name":"사이프러스 니코시아","nameEn":"Nicosia","continent":"도서지역","season":"봄","cost":4230000,"mentionIdx":75,"safetyIdx":91,"grade":"보통","golf":false},{"rank":48,"type":"overseas","name":"과테말라 안티구아","nameEn":"Antigua","continent":"중미","season":"겨울","cost":3490000,"mentionIdx":74,"safetyIdx":78,"grade":"보통","golf":false},{"rank":49,"type":"overseas","name":"호주 시드니","nameEn":"Sydney","continent":"오세아니아","season":"봄","cost":6560000,"mentionIdx":93,"safetyIdx":90,"grade":"보통","golf":true},{"rank":50,"type":"overseas","name":"필리핀 세부","nameEn":"Cebu","continent":"아시아","season":"겨울","cost":2380000,"mentionIdx":81,"safetyIdx":62,"grade":"보통","golf":true},{"rank":51,"type":"overseas","name":"스페인 말라가","nameEn":"Malaga","continent":"유럽","season":"봄","cost":5040000,"mentionIdx":84,"safetyIdx":88,"grade":"보통","golf":true},{"rank":52,"type":"overseas","name":"코스타리카 산호세","nameEn":"San Jose","continent":"중미","season":"겨울","cost":3970000,"mentionIdx":78,"safetyIdx":76,"grade":"주의","golf":true},{"rank":53,"type":"overseas","name":"페루 리마","nameEn":"Lima","continent":"남미","season":"여름","cost":3820000,"mentionIdx":82,"safetyIdx":67,"grade":"주의","golf":false},{"rank":54,"type":"overseas","name":"멕시코 플라야 델 카르멘","nameEn":"Playa del Carmen","continent":"중미","season":"겨울","cost":4810000,"mentionIdx":88,"safetyIdx":75,"grade":"주의","golf":true},{"rank":55,"type":"overseas","name":"모리셔스 포트루이스","nameEn":"Port Louis","continent":"아프리카","season":"겨울","cost":5340000,"mentionIdx":82,"safetyIdx":88,"grade":"주의","golf":true},{"rank":56,"type":"overseas","name":"캐나다 몬트리올","nameEn":"Montreal","continent":"북미","season":"여름","cost":5580000,"mentionIdx":81,"safetyIdx":86,"grade":"주의","golf":true},{"rank":57,"type":"overseas","name":"미국 사이판","nameEn":"Saipan","continent":"도서지역","season":"겨울","cost":5070000,"mentionIdx":81,"safetyIdx":88,"grade":"주의","golf":true},{"rank":58,"type":"overseas","name":"콜롬비아 보고타","nameEn":"Bogota","continent":"남미","season":"여름","cost":3590000,"mentionIdx":80,"safetyIdx":60,"grade":"주의","golf":false},{"rank":59,"type":"overseas","name":"오스트리아 비엔나","nameEn":"Vienna","continent":"유럽","season":"봄","cost":5700000,"mentionIdx":82,"safetyIdx":94,"grade":"주의","golf":false},{"rank":60,"type":"overseas","name":"괌","nameEn":"Guam","continent":"오세아니아","season":"겨울","cost":5500000,"mentionIdx":84,"safetyIdx":89,"grade":"주의","golf":true},{"rank":61,"type":"overseas","name":"그리스 아테네","nameEn":"Athens","continent":"유럽","season":"봄","cost":4310000,"mentionIdx":80,"safetyIdx":76,"grade":"주의","golf":false},{"rank":62,"type":"overseas","name":"뉴질랜드 퀸스타운","nameEn":"Queenstown","continent":"오세아니아","season":"여름","cost":7120000,"mentionIdx":89,"safetyIdx":95,"grade":"주의","golf":true},{"rank":63,"type":"overseas","name":"모로코 카사블랑카","nameEn":"Casablanca","continent":"아프리카","season":"가을","cost":3700000,"mentionIdx":73,"safetyIdx":75,"grade":"주의","golf":false},{"rank":64,"type":"overseas","name":"탄자니아 잔지바르","nameEn":"Zanzibar","continent":"아프리카","season":"겨울","cost":4310000,"mentionIdx":79,"safetyIdx":77,"grade":"주의","golf":false},{"rank":65,"type":"overseas","name":"에콰도르 키토","nameEn":"Quito","continent":"남미","season":"여름","cost":3310000,"mentionIdx":70,"safetyIdx":68,"grade":"주의","golf":false},{"rank":66,"type":"overseas","name":"칠레 산티아고","nameEn":"Santiago","continent":"남미","season":"가을","cost":4600000,"mentionIdx":79,"safetyIdx":73,"grade":"주의","golf":true},{"rank":67,"type":"overseas","name":"스페인 마드리드","nameEn":"Madrid","continent":"유럽","season":"봄","cost":5620000,"mentionIdx":85,"safetyIdx":83,"grade":"주의","golf":true},{"rank":68,"type":"overseas","name":"캐나다 밴쿠버","nameEn":"Vancouver","continent":"북미","season":"여름","cost":6740000,"mentionIdx":89,"safetyIdx":85,"grade":"주의","golf":true},{"rank":69,"type":"overseas","name":"피지 난디","nameEn":"Nadi","continent":"오세아니아","season":"겨울","cost":4880000,"mentionIdx":74,"safetyIdx":83,"grade":"주의","golf":true},{"rank":70,"type":"overseas","name":"파나마 파나마시티","nameEn":"Panama City","continent":"중미","season":"겨울","cost":4480000,"mentionIdx":73,"safetyIdx":79,"grade":"하위","golf":true},{"rank":71,"type":"overseas","name":"이탈리아 피렌체","nameEn":"Florence","continent":"유럽","season":"봄","cost":5750000,"mentionIdx":83,"safetyIdx":85,"grade":"하위","golf":false},{"rank":72,"type":"overseas","name":"케냐 나이로비","nameEn":"Nairobi","continent":"아프리카","season":"여름","cost":3290000,"mentionIdx":75,"safetyIdx":55,"grade":"하위","golf":false},{"rank":73,"type":"overseas","name":"캐나다 토론토","nameEn":"Toronto","continent":"북미","season":"가을","cost":6560000,"mentionIdx":83,"safetyIdx":84,"grade":"하위","golf":true},{"rank":74,"type":"overseas","name":"브라질 리우데자네이루","nameEn":"Rio de Janeiro","continent":"남미","season":"겨울","cost":4550000,"mentionIdx":86,"safetyIdx":55,"grade":"하위","golf":false},{"rank":75,"type":"overseas","name":"캄보디아 프놈펜","nameEn":"Phnom Penh","continent":"아시아","season":"겨울","cost":2000000,"mentionIdx":65,"safetyIdx":60,"grade":"하위","golf":false},{"rank":76,"type":"overseas","name":"이탈리아 로마","nameEn":"Rome","continent":"유럽","season":"가을","cost":5980000,"mentionIdx":88,"safetyIdx":78,"grade":"하위","golf":false},{"rank":77,"type":"overseas","name":"프랑스령 레위니옹","nameEn":"Reunion","continent":"도서지역","season":"겨울","cost":5260000,"mentionIdx":68,"safetyIdx":89,"grade":"하위","golf":false},{"rank":78,"type":"overseas","name":"스페인 바르셀로나","nameEn":"Barcelona","continent":"유럽","season":"봄","cost":6280000,"mentionIdx":91,"safetyIdx":75,"grade":"하위","golf":true},{"rank":79,"type":"overseas","name":"코스타리카 노사라","nameEn":"Nosara","continent":"중미","season":"겨울","cost":5860000,"mentionIdx":75,"safetyIdx":83,"grade":"하위","golf":false},{"rank":80,"type":"overseas","name":"우루과이 몬테비데오","nameEn":"Montevideo","continent":"남미","season":"봄","cost":5360000,"mentionIdx":72,"safetyIdx":82,"grade":"하위","golf":false},{"rank":81,"type":"overseas","name":"미국 오스틴","nameEn":"Austin","continent":"북미","season":"봄","cost":6820000,"mentionIdx":85,"safetyIdx":80,"grade":"하위","golf":true},{"rank":82,"type":"overseas","name":"그리스 산토리니","nameEn":"Santorini","continent":"도서지역","season":"봄","cost":7580000,"mentionIdx":85,"safetyIdx":92,"grade":"하위","golf":false},{"rank":83,"type":"overseas","name":"멕시코 툴룸","nameEn":"Tulum","continent":"중미","season":"겨울","cost":5600000,"mentionIdx":85,"safetyIdx":70,"grade":"하위","golf":false},{"rank":84,"type":"overseas","name":"미국 라스베이거스","nameEn":"Las Vegas","continent":"북미","season":"가을","cost":6100000,"mentionIdx":84,"safetyIdx":76,"grade":"하위","golf":true},{"rank":85,"type":"overseas","name":"남아공 요하네스버그","nameEn":"Johannesburg","continent":"아프리카","season":"봄","cost":3450000,"mentionIdx":70,"safetyIdx":45,"grade":"하위","golf":true},{"rank":86,"type":"overseas","name":"미국 하와이 호놀룰루","nameEn":"Honolulu","continent":"도서지역","season":"가을","cost":8400000,"mentionIdx":96,"safetyIdx":91,"grade":"하위","golf":true},{"rank":87,"type":"overseas","name":"도미니카공화국 산토도밍고","nameEn":"Santo Domingo","continent":"중미","season":"겨울","cost":4150000,"mentionIdx":68,"safetyIdx":64,"grade":"하위","golf":false},{"rank":88,"type":"overseas","name":"멕시코 칸쿤","nameEn":"Cancun","continent":"중미","season":"겨울","cost":6090000,"mentionIdx":87,"safetyIdx":74,"grade":"하위","golf":true},{"rank":89,"type":"overseas","name":"브라질 상파울루","nameEn":"Sao Paulo","continent":"남미","season":"봄","cost":4530000,"mentionIdx":75,"safetyIdx":58,"grade":"하위","golf":false},{"rank":90,"type":"overseas","name":"미국 시애틀","nameEn":"Seattle","continent":"북미","season":"여름","cost":7300000,"mentionIdx":80,"safetyIdx":81,"grade":"최하위","golf":true},{"rank":91,"type":"overseas","name":"프랑스 니스","nameEn":"Nice","continent":"유럽","season":"여름","cost":6840000,"mentionIdx":81,"safetyIdx":82,"grade":"최하위","golf":false},{"rank":92,"type":"overseas","name":"미국 로스앤젤레스","nameEn":"Los Angeles","continent":"북미","season":"봄","cost":8240000,"mentionIdx":94,"safetyIdx":74,"grade":"최하위","golf":true},{"rank":93,"type":"overseas","name":"세이셸 빅토리아","nameEn":"Victoria","continent":"아프리카","season":"봄","cost":8140000,"mentionIdx":77,"safetyIdx":90,"grade":"최하위","golf":false},{"rank":94,"type":"overseas","name":"미국 하와이 마우이","nameEn":"Maui","continent":"도서지역","season":"봄","cost":9160000,"mentionIdx":88,"safetyIdx":92,"grade":"최하위","golf":true},{"rank":95,"type":"overseas","name":"미국 마이애미","nameEn":"Miami","continent":"북미","season":"겨울","cost":8240000,"mentionIdx":87,"safetyIdx":73,"grade":"최하위","golf":true},{"rank":96,"type":"overseas","name":"프랑스령 폴리네시아 타히티","nameEn":"Tahiti","continent":"도서지역","season":"여름","cost":8740000,"mentionIdx":79,"safetyIdx":87,"grade":"최하위","golf":false},{"rank":97,"type":"overseas","name":"프랑스 파리","nameEn":"Paris","continent":"유럽","season":"봄","cost":7660000,"mentionIdx":90,"safetyIdx":70,"grade":"최하위","golf":false},{"rank":98,"type":"overseas","name":"바베이도스 브리지타운","nameEn":"Bridgetown","continent":"중미","season":"겨울","cost":8240000,"mentionIdx":70,"safetyIdx":82,"grade":"최하위","golf":false},{"rank":99,"type":"overseas","name":"미국 샌프란시스코","nameEn":"San Francisco","continent":"북미","season":"가을","cost":9000000,"mentionIdx":86,"safetyIdx":70,"grade":"최하위","golf":false},{"rank":100,"type":"overseas","name":"미국 뉴욕","nameEn":"New York City","continent":"북미","season":"가을","cost":10200000,"mentionIdx":92,"safetyIdx":72,"grade":"최하위","golf":false}],
+  cityDetails: {
+    kagoshima: {
+      costs: [
+        {item:"숙소 (에어비앤비 1베드)", included:true, amount:900000, note:"시내 도보권 추천"},
+        {item:"식비 (2인·외식+마트)", included:true, amount:1000000, note:"편의점·라멘·정식 활용"},
+        {item:"골프 그린피 (월 8회)", included:true, amount:1200000, note:"¥15,000~32,000/회, 카트포함"},
+        {item:"교통 (렌터카·버스)", included:true, amount:200000, note:"렌터카 월 15만엔 내외"},
+        {item:"온천·문화·쇼핑", included:true, amount:200000, note:"시라이와·이부스키 온천"},
+        {item:"항공 (인천↔가고시마)", included:false, amount:400000, note:"직항 2시간, 왕복 40만원 내외"},
+        {item:"합계 (항공 제외)", included:true, amount:3500000, note:"2인 기준"},
+        {item:"합계 (항공 포함)", included:true, amount:3900000, note:"2인 기준"}
+      ],
+      golfSummary: "가고시마는 규슈 내 최다 골프장 밀집 지역. 사쿠라지마 조망 코스, 이부스키 온천 연계 리조트 골프가 핵심 매력.",
+      golfCourses: [
+        {name:"이부스키 골프클럽", feature:"온천 료칸 연계, 사계절 꽃 코스", greenFee:"¥18,000~28,000", cart:"카트 포함"},
+        {name:"가고시마 CC (가와우치)", feature:"사쿠라지마 조망, 구릉형 코스", greenFee:"¥12,000~20,000", cart:"카트 포함"},
+        {name:"카이몬 골프링크스", feature:"개방감 넘치는 해안 코스, 일몰 라운드", greenFee:"¥15,000~22,000", cart:"카트 포함"},
+        {name:"선에이 CC 지란", feature:"지란 특공대 유적 인근, 역사탐방 연계", greenFee:"¥10,000~16,000", cart:"카트 포함"}
+      ],
+      weeklySchedule: [
+        {day:"월", am:"이부스키 골프 오전 라운드", pm:"온천 & 휴식"},
+        {day:"화", am:"시내 관광 (이소 정원·유신관)", pm:"가고시마 흑돼지 저녁"},
+        {day:"수", am:"가고시마 CC 라운드", pm:"사쿠라지마 페리 탐방"},
+        {day:"목", am:"휴식·마트 장보기", pm:"자취 요리 or 이자카야"},
+        {day:"금", am:"지란 특공대 평화회관 방문", pm:"카이몬 석양 라운드"},
+        {day:"토", am:"야쿠시마·아마미 당일 페리 여행", pm:"현지 시장 탐방"},
+        {day:"일", am:"료칸 조식·온천 힐링", pm:"독서·넷플릭스 자유 시간"}
+      ],
+      lodging: "이부스키 또는 가고시마 시내 에어비앤비(월 60~90만원)를 기준으로 합니다. 넉넉한 부엌이 있는 1베드 추천. 이부스키 온천 료칸 주 1회 숙박(1박 3~5만엔)도 병행 가능.",
+      tips: "① 이부스키 '스나무시'(모래찜질) 온천은 반드시 체험 · ② 가고시마 흑돼지 샤부샤부·흑돼지 돈카츠는 현지 필수 음식 · ③ 사쿠라지마 페리(4분)는 무료, 화산재 마스크 필수 · ④ 야쿠시마 세계자연유산 당일·1박 여행 추천 · ⑤ 교통카드 nimoca 발급하면 버스·편의점 모두 편리"
+    },
 
-  domesticCities: [{"rank":1,"type":"domestic","name":"제주 성산","nameEn":"Seongsan","region":"제주","season":"봄","cost":3080000,"mentionIdx":88,"safetyIdx":92,"grade":"최우수","golf":true},{"rank":2,"type":"domestic","name":"제주 서귀포","nameEn":"Seogwipo","region":"제주","season":"가을","cost":3310000,"mentionIdx":98,"safetyIdx":95,"grade":"최우수","golf":true},{"rank":3,"type":"domestic","name":"제주 구좌","nameEn":"Gujwa","region":"제주","season":"가을","cost":3080000,"mentionIdx":85,"safetyIdx":92,"grade":"최우수","golf":true},{"rank":4,"type":"domestic","name":"경북 안동","nameEn":"Andong","region":"영남","season":"가을","cost":2920000,"mentionIdx":82,"safetyIdx":95,"grade":"최우수","golf":true},{"rank":5,"type":"domestic","name":"전남 강진","nameEn":"Gangjin","region":"호남","season":"봄","cost":2840000,"mentionIdx":77,"safetyIdx":95,"grade":"최우수","golf":true},{"rank":6,"type":"domestic","name":"전남 목포","nameEn":"Mokpo","region":"호남","season":"가을","cost":3030000,"mentionIdx":83,"safetyIdx":94,"grade":"우수","golf":true},{"rank":7,"type":"domestic","name":"경남 통영","nameEn":"Tongyeong","region":"영남","season":"가을","cost":3170000,"mentionIdx":92,"safetyIdx":94,"grade":"우수","golf":true},{"rank":8,"type":"domestic","name":"전북 군산","nameEn":"Gunsan","region":"호남","season":"가을","cost":2960000,"mentionIdx":80,"safetyIdx":94,"grade":"우수","golf":true},{"rank":9,"type":"domestic","name":"전북 전주","nameEn":"Jeonju","region":"호남","season":"봄","cost":3180000,"mentionIdx":91,"safetyIdx":95,"grade":"우수","golf":true},{"rank":10,"type":"domestic","name":"경북 영주","nameEn":"Yeongju","region":"영남","season":"가을","cost":2740000,"mentionIdx":67,"safetyIdx":95,"grade":"우수","golf":true},{"rank":11,"type":"domestic","name":"경남 하동","nameEn":"Hadong","region":"영남","season":"봄","cost":2970000,"mentionIdx":84,"safetyIdx":95,"grade":"우수","golf":true},{"rank":12,"type":"domestic","name":"전남 순천","nameEn":"Suncheon","region":"호남","season":"봄","cost":3160000,"mentionIdx":89,"safetyIdx":96,"grade":"우수","golf":true},{"rank":13,"type":"domestic","name":"전남 해남","nameEn":"Haenam","region":"호남","season":"가을","cost":2890000,"mentionIdx":75,"safetyIdx":95,"grade":"우수","golf":true},{"rank":14,"type":"domestic","name":"제주 제주시","nameEn":"Jeju City","region":"제주","season":"가을","cost":3540000,"mentionIdx":100,"safetyIdx":95,"grade":"우수","golf":true},{"rank":15,"type":"domestic","name":"강원 삼척","nameEn":"Samcheok","region":"강원","season":"여름","cost":3020000,"mentionIdx":80,"safetyIdx":92,"grade":"우수","golf":true},{"rank":16,"type":"domestic","name":"전북 진안","nameEn":"Jinan","region":"호남","season":"가을","cost":2720000,"mentionIdx":68,"safetyIdx":95,"grade":"우수","golf":true},{"rank":17,"type":"domestic","name":"경남 거창","nameEn":"Geochang","region":"영남","season":"가을","cost":2660000,"mentionIdx":61,"safetyIdx":95,"grade":"양호","golf":true},{"rank":18,"type":"domestic","name":"충북 단양","nameEn":"Danyang","region":"충청","season":"가을","cost":3040000,"mentionIdx":82,"safetyIdx":95,"grade":"양호","golf":true},{"rank":19,"type":"domestic","name":"강원 동해","nameEn":"Donghae","region":"강원","season":"여름","cost":2970000,"mentionIdx":77,"safetyIdx":92,"grade":"양호","golf":true},{"rank":20,"type":"domestic","name":"전북 남원","nameEn":"Namwon","region":"호남","season":"봄","cost":2820000,"mentionIdx":70,"safetyIdx":95,"grade":"양호","golf":true},{"rank":21,"type":"domestic","name":"제주 남원","nameEn":"Namwon","region":"제주","season":"겨울","cost":3130000,"mentionIdx":76,"safetyIdx":93,"grade":"양호","golf":true},{"rank":22,"type":"domestic","name":"경남 진주","nameEn":"Jinju","region":"영남","season":"가을","cost":2930000,"mentionIdx":72,"safetyIdx":95,"grade":"양호","golf":true},{"rank":23,"type":"domestic","name":"경북 봉화","nameEn":"Bonghwa","region":"영남","season":"가을","cost":2650000,"mentionIdx":58,"safetyIdx":95,"grade":"양호","golf":true},{"rank":24,"type":"domestic","name":"전남 보성","nameEn":"Boseong","region":"호남","season":"봄","cost":2890000,"mentionIdx":70,"safetyIdx":95,"grade":"양호","golf":true},{"rank":25,"type":"domestic","name":"경북 울진","nameEn":"Uljin","region":"영남","season":"여름","cost":2880000,"mentionIdx":71,"safetyIdx":93,"grade":"양호","golf":true},{"rank":26,"type":"domestic","name":"전북 순창","nameEn":"Sunchang","region":"호남","season":"봄","cost":2640000,"mentionIdx":57,"safetyIdx":95,"grade":"양호","golf":true},{"rank":27,"type":"domestic","name":"경북 경주","nameEn":"Gyeongju","region":"영남","season":"봄","cost":3330000,"mentionIdx":93,"safetyIdx":96,"grade":"양호","golf":true},{"rank":28,"type":"domestic","name":"경남 산청","nameEn":"Sancheong","region":"영남","season":"가을","cost":2840000,"mentionIdx":68,"safetyIdx":95,"grade":"양호","golf":true},{"rank":29,"type":"domestic","name":"제주 표선","nameEn":"Pyoseon","region":"제주","season":"가을","cost":3080000,"mentionIdx":73,"safetyIdx":91,"grade":"양호","golf":true},{"rank":30,"type":"domestic","name":"경북 영양","nameEn":"Yeongyang","region":"영남","season":"가을","cost":2610000,"mentionIdx":55,"safetyIdx":95,"grade":"양호","golf":true},{"rank":31,"type":"domestic","name":"충남 공주","nameEn":"Gongju","region":"충청","season":"봄","cost":2980000,"mentionIdx":76,"safetyIdx":95,"grade":"보통","golf":true},{"rank":32,"type":"domestic","name":"경북 청송","nameEn":"Cheongsong","region":"영남","season":"가을","cost":2780000,"mentionIdx":64,"safetyIdx":96,"grade":"보통","golf":true},{"rank":33,"type":"domestic","name":"전북 고창","nameEn":"Gochang","region":"호남","season":"가을","cost":2950000,"mentionIdx":75,"safetyIdx":95,"grade":"보통","golf":true},{"rank":34,"type":"domestic","name":"충남 부여","nameEn":"Buyeo","region":"충청","season":"봄","cost":2890000,"mentionIdx":73,"safetyIdx":95,"grade":"보통","golf":true},{"rank":35,"type":"domestic","name":"경남 함양","nameEn":"Hamyang","region":"영남","season":"가을","cost":2740000,"mentionIdx":63,"safetyIdx":95,"grade":"보통","golf":true},{"rank":36,"type":"domestic","name":"충북 괴산","nameEn":"Goesan","region":"충청","season":"가을","cost":2810000,"mentionIdx":65,"safetyIdx":95,"grade":"보통","golf":true},{"rank":37,"type":"domestic","name":"전북 부안","nameEn":"Buan","region":"호남","season":"여름","cost":3000000,"mentionIdx":76,"safetyIdx":94,"grade":"보통","golf":true},{"rank":38,"type":"domestic","name":"충남 서천","nameEn":"Seocheon","region":"충청","season":"가을","cost":2810000,"mentionIdx":65,"safetyIdx":94,"grade":"보통","golf":true},{"rank":39,"type":"domestic","name":"전남 진도","nameEn":"Jindo","region":"호남","season":"봄","cost":2900000,"mentionIdx":68,"safetyIdx":93,"grade":"보통","golf":true},{"rank":40,"type":"domestic","name":"경남 밀양","nameEn":"Miryang","region":"영남","season":"봄","cost":2830000,"mentionIdx":65,"safetyIdx":94,"grade":"보통","golf":true},{"rank":41,"type":"domestic","name":"경북 문경","nameEn":"Mungyeong","region":"영남","season":"가을","cost":2950000,"mentionIdx":73,"safetyIdx":95,"grade":"보통","golf":true},{"rank":42,"type":"domestic","name":"전남 구례","nameEn":"Gurye","region":"호남","season":"봄","cost":3010000,"mentionIdx":74,"safetyIdx":96,"grade":"보통","golf":true},{"rank":43,"type":"domestic","name":"충북 제천","nameEn":"Jecheon","region":"충청","season":"가을","cost":2990000,"mentionIdx":74,"safetyIdx":95,"grade":"보통","golf":true},{"rank":44,"type":"domestic","name":"제주 한림","nameEn":"Hallim","region":"제주","season":"가을","cost":3310000,"mentionIdx":82,"safetyIdx":91,"grade":"보통","golf":true},{"rank":45,"type":"domestic","name":"강원 영월","nameEn":"Yeongwol","region":"강원","season":"가을","cost":2950000,"mentionIdx":73,"safetyIdx":94,"grade":"보통","golf":true},{"rank":46,"type":"domestic","name":"전남 화순","nameEn":"Hwasun","region":"호남","season":"봄","cost":2910000,"mentionIdx":71,"safetyIdx":95,"grade":"보통","golf":true},{"rank":47,"type":"domestic","name":"강원 춘천","nameEn":"Chuncheon","region":"강원","season":"봄","cost":3200000,"mentionIdx":85,"safetyIdx":95,"grade":"보통","golf":true},{"rank":48,"type":"domestic","name":"전남 고흥","nameEn":"Goheung","region":"호남","season":"봄","cost":2890000,"mentionIdx":66,"safetyIdx":94,"grade":"보통","golf":true},{"rank":49,"type":"domestic","name":"충북 영동","nameEn":"Yeongdong","region":"충청","season":"가을","cost":2710000,"mentionIdx":59,"safetyIdx":95,"grade":"보통","golf":true},{"rank":50,"type":"domestic","name":"제주 애월","nameEn":"Aewol","region":"제주","season":"봄","cost":3640000,"mentionIdx":95,"safetyIdx":93,"grade":"보통","golf":true},{"rank":51,"type":"domestic","name":"전남 장흥","nameEn":"Jangheung","region":"호남","season":"가을","cost":2790000,"mentionIdx":62,"safetyIdx":94,"grade":"보통","golf":true},{"rank":52,"type":"domestic","name":"제주 한경","nameEn":"Hangyeong","region":"제주","season":"봄","cost":3110000,"mentionIdx":75,"safetyIdx":90,"grade":"주의","golf":true},{"rank":53,"type":"domestic","name":"전남 담양","nameEn":"Damyang","region":"호남","season":"봄","cost":3230000,"mentionIdx":84,"safetyIdx":96,"grade":"주의","golf":true},{"rank":54,"type":"domestic","name":"제주 조천","nameEn":"Jocheon","region":"제주","season":"봄","cost":3360000,"mentionIdx":80,"safetyIdx":93,"grade":"주의","golf":true},{"rank":55,"type":"domestic","name":"강원 태백","nameEn":"Taebaek","region":"강원","season":"여름","cost":2820000,"mentionIdx":62,"safetyIdx":94,"grade":"주의","golf":true},{"rank":56,"type":"domestic","name":"경남 거제","nameEn":"Geoje","region":"영남","season":"봄","cost":3300000,"mentionIdx":87,"safetyIdx":93,"grade":"주의","golf":true},{"rank":57,"type":"domestic","name":"경북 영덕","nameEn":"Yeongdeok","region":"영남","season":"여름","cost":3060000,"mentionIdx":74,"safetyIdx":93,"grade":"주의","golf":true},{"rank":58,"type":"domestic","name":"경북 포항","nameEn":"Pohang","region":"영남","season":"여름","cost":3330000,"mentionIdx":86,"safetyIdx":94,"grade":"주의","golf":true},{"rank":59,"type":"domestic","name":"충남 예산","nameEn":"Yesan","region":"충청","season":"가을","cost":2880000,"mentionIdx":66,"safetyIdx":95,"grade":"주의","golf":true},{"rank":60,"type":"domestic","name":"강원 원주","nameEn":"Wonju","region":"강원","season":"가을","cost":3070000,"mentionIdx":72,"safetyIdx":95,"grade":"주의","golf":true},{"rank":61,"type":"domestic","name":"전북 익산","nameEn":"Iksan","region":"호남","season":"가을","cost":2850000,"mentionIdx":60,"safetyIdx":94,"grade":"주의","golf":true},{"rank":62,"type":"domestic","name":"경남 고성군","nameEn":"Goseong","region":"영남","season":"봄","cost":2840000,"mentionIdx":60,"safetyIdx":93,"grade":"주의","golf":true},{"rank":63,"type":"domestic","name":"강원 강릉","nameEn":"Gangneung","region":"강원","season":"여름","cost":3550000,"mentionIdx":96,"safetyIdx":94,"grade":"주의","golf":true},{"rank":64,"type":"domestic","name":"전남 여수","nameEn":"Yeosu","region":"호남","season":"가을","cost":3570000,"mentionIdx":95,"safetyIdx":95,"grade":"주의","golf":true},{"rank":65,"type":"domestic","name":"강원 인제","nameEn":"Inje","region":"강원","season":"가을","cost":2900000,"mentionIdx":65,"safetyIdx":93,"grade":"주의","golf":true},{"rank":66,"type":"domestic","name":"충북 보은","nameEn":"Boeun","region":"충청","season":"가을","cost":2890000,"mentionIdx":63,"safetyIdx":95,"grade":"주의","golf":true},{"rank":67,"type":"domestic","name":"전남 완도","nameEn":"Wando","region":"호남","season":"여름","cost":3130000,"mentionIdx":72,"safetyIdx":93,"grade":"주의","golf":true},{"rank":68,"type":"domestic","name":"충남 보령","nameEn":"Boryeong","region":"충청","season":"여름","cost":3260000,"mentionIdx":81,"safetyIdx":93,"grade":"주의","golf":true},{"rank":69,"type":"domestic","name":"경남 합천","nameEn":"Hapcheon","region":"영남","season":"가을","cost":2920000,"mentionIdx":64,"safetyIdx":94,"grade":"주의","golf":true},{"rank":70,"type":"domestic","name":"전북 완주","nameEn":"Wanju","region":"호남","season":"봄","cost":2980000,"mentionIdx":65,"safetyIdx":95,"grade":"하위","golf":true},{"rank":71,"type":"domestic","name":"강원 화천","nameEn":"Hwacheon","region":"강원","season":"겨울","cost":2790000,"mentionIdx":60,"safetyIdx":93,"grade":"하위","golf":true},{"rank":72,"type":"domestic","name":"충남 홍성","nameEn":"Hongseong","region":"충청","season":"가을","cost":2880000,"mentionIdx":62,"safetyIdx":94,"grade":"하위","golf":true},{"rank":73,"type":"domestic","name":"경남 사천","nameEn":"Sacheon","region":"영남","season":"봄","cost":3020000,"mentionIdx":66,"safetyIdx":93,"grade":"하위","golf":true},{"rank":74,"type":"domestic","name":"강원 속초","nameEn":"Sokcho","region":"강원","season":"여름","cost":3600000,"mentionIdx":94,"safetyIdx":93,"grade":"하위","golf":true},{"rank":75,"type":"domestic","name":"충북 충주","nameEn":"Chungju","region":"충청","season":"봄","cost":3110000,"mentionIdx":71,"safetyIdx":95,"grade":"하위","golf":true},{"rank":76,"type":"domestic","name":"충남 태안","nameEn":"Taean","region":"충청","season":"가을","cost":3390000,"mentionIdx":85,"safetyIdx":93,"grade":"하위","golf":true},{"rank":77,"type":"domestic","name":"경남 창원","nameEn":"Changwon","region":"영남","season":"봄","cost":3290000,"mentionIdx":75,"safetyIdx":95,"grade":"하위","golf":true},{"rank":78,"type":"domestic","name":"경북 구미","nameEn":"Gumi","region":"영남","season":"봄","cost":2990000,"mentionIdx":61,"safetyIdx":94,"grade":"하위","golf":true},{"rank":79,"type":"domestic","name":"전남 신안","nameEn":"Sinan","region":"호남","season":"여름","cost":3180000,"mentionIdx":69,"safetyIdx":91,"grade":"하위","golf":true},{"rank":80,"type":"domestic","name":"경남 남해","nameEn":"Namhae","region":"영남","season":"봄","cost":3460000,"mentionIdx":90,"safetyIdx":94,"grade":"하위","golf":true},{"rank":81,"type":"domestic","name":"충남 아산","nameEn":"Asan","region":"충청","season":"봄","cost":3150000,"mentionIdx":68,"safetyIdx":95,"grade":"하위","golf":true},{"rank":82,"type":"domestic","name":"제주 대정","nameEn":"Daejeong","region":"제주","season":"겨울","cost":3540000,"mentionIdx":78,"safetyIdx":91,"grade":"하위","golf":true},{"rank":83,"type":"domestic","name":"인천 강화도","nameEn":"Ganghwado","region":"인천","season":"가을","cost":3380000,"mentionIdx":81,"safetyIdx":93,"grade":"하위","golf":true},{"rank":84,"type":"domestic","name":"강원 정선","nameEn":"Jeongseon","region":"강원","season":"가을","cost":3210000,"mentionIdx":75,"safetyIdx":93,"grade":"하위","golf":true},{"rank":85,"type":"domestic","name":"전북 무주","nameEn":"Muju","region":"호남","season":"여름","cost":3260000,"mentionIdx":73,"safetyIdx":94,"grade":"하위","golf":true},{"rank":86,"type":"domestic","name":"부산 영도","nameEn":"Yeongdo","region":"부산","season":"봄","cost":3590000,"mentionIdx":89,"safetyIdx":91,"grade":"하위","golf":true},{"rank":87,"type":"domestic","name":"경기 포천","nameEn":"Pocheon","region":"수도권","season":"여름","cost":3380000,"mentionIdx":75,"safetyIdx":93,"grade":"하위","golf":true},{"rank":88,"type":"domestic","name":"경기 파주","nameEn":"Paju","region":"수도권","season":"봄","cost":3550000,"mentionIdx":83,"safetyIdx":94,"grade":"하위","golf":true},{"rank":89,"type":"domestic","name":"강원 고성","nameEn":"Goseong","region":"강원","season":"여름","cost":3490000,"mentionIdx":81,"safetyIdx":91,"grade":"하위","golf":true},{"rank":90,"type":"domestic","name":"강원 평창","nameEn":"Pyeongchang","region":"강원","season":"여름","cost":3560000,"mentionIdx":83,"safetyIdx":94,"grade":"최하위","golf":true},{"rank":91,"type":"domestic","name":"제주 우도","nameEn":"Udo","region":"제주","season":"봄","cost":3520000,"mentionIdx":70,"safetyIdx":89,"grade":"최하위","golf":true},{"rank":92,"type":"domestic","name":"경기 여주","nameEn":"Yeoju","region":"수도권","season":"가을","cost":3410000,"mentionIdx":72,"safetyIdx":94,"grade":"최하위","golf":true},{"rank":93,"type":"domestic","name":"경기 양주","nameEn":"Yangju","region":"수도권","season":"봄","cost":3330000,"mentionIdx":65,"safetyIdx":93,"grade":"최하위","golf":true},{"rank":94,"type":"domestic","name":"강원 홍천","nameEn":"Hongcheon","region":"강원","season":"가을","cost":3370000,"mentionIdx":70,"safetyIdx":94,"grade":"최하위","golf":true},{"rank":95,"type":"domestic","name":"경기 가평","nameEn":"Gapyeong","region":"수도권","season":"여름","cost":3730000,"mentionIdx":84,"safetyIdx":93,"grade":"최하위","golf":true},{"rank":96,"type":"domestic","name":"경기 양평","nameEn":"Yangpyeong","region":"수도권","season":"봄","cost":3730000,"mentionIdx":81,"safetyIdx":94,"grade":"최하위","golf":true},{"rank":97,"type":"domestic","name":"강원 양양","nameEn":"Yangyang","region":"강원","season":"여름","cost":3960000,"mentionIdx":91,"safetyIdx":90,"grade":"최하위","golf":true},{"rank":98,"type":"domestic","name":"부산 광안리","nameEn":"Gwangalli","region":"부산","season":"여름","cost":4250000,"mentionIdx":97,"safetyIdx":93,"grade":"최하위","golf":true},{"rank":99,"type":"domestic","name":"부산 해운대","nameEn":"Haeundae","region":"부산","season":"여름","cost":4400000,"mentionIdx":99,"safetyIdx":93,"grade":"최하위","golf":true},{"rank":100,"type":"domestic","name":"경북 울릉도","nameEn":"Ulleungdo","region":"영남","season":"여름","cost":4310000,"mentionIdx":79,"safetyIdx":91,"grade":"최하위","golf":true}],
+    okinawa: {
+      costs: [
+        {item:"숙소 (오션뷰 월세)", included:true, amount:1800000, note:"나하·차탄 1베드 기준"},
+        {item:"식비 (2인)", included:true, amount:1000000, note:"현지 소바·스테이크 저렴"},
+        {item:"골프 그린피 (월 8회)", included:true, amount:1600000, note:"¥15,000~28,000/회"},
+        {item:"렌터카", included:true, amount:300000, note:"주 단위 렌트 효율적"},
+        {item:"레저·관광", included:true, amount:300000, note:"수족관·다이빙·드라이브"},
+        {item:"항공 (인천↔나하)", included:false, amount:500000, note:"왕복 50만원 내외"},
+        {item:"합계 (항공 제외)", included:true, amount:5000000, note:"2인 기준"},
+        {item:"합계 (항공 포함)", included:true, amount:5500000, note:"2인 기준"}
+      ],
+      golfSummary: "오키나와는 아열대 기후로 연중 골프 가능. 오션뷰 코스가 특징이며 부기빌레아·ANAインターコンチネンタル 등 리조트 연계 패키지가 가성비 우수.",
+      golfCourses: [
+        {name:"ANA인터컨티넨탈 만좌비치 GC", feature:"산호초 오션뷰 18홀, 리조트 패키지 가능", greenFee:"¥18,000~28,000", cart:"카트포함"},
+        {name:"오키나와 Kariyushi CC", feature:"중부 구릉형, 성수기 예약 필수", greenFee:"¥15,000~22,000", cart:"카트포함"},
+        {name:"나고 파인힐스 GC", feature:"북부 파인애플 밭 인근, 조용한 플레이", greenFee:"¥12,000~18,000", cart:"카트포함"},
+        {name:"오키나와 부기빌레아 CC", feature:"미군 기지 인근, 넓은 페어웨이", greenFee:"¥14,000~20,000", cart:"카트포함"}
+      ],
+      weeklySchedule: [
+        {day:"월", am:"카리유시 CC 오전 라운드", pm:"온나손 해변 산책"},
+        {day:"화", am:"오키나와 세계유산 류큐 성터 투어", pm:"나하 국제거리 쇼핑"},
+        {day:"수", am:"ANA 리조트 GC 라운드", pm:"만좌비치 석양 감상"},
+        {day:"목", am:"슈리성 & 首里 탐방", pm:"오키나와 소바·아구돼지 저녁"},
+        {day:"금", am:"북부 나고파인힐스 라운드", pm:"나고 파인애플파크 투어"},
+        {day:"토", am:"스노클링·글래스보텀 보트", pm:"미국마을(차탄) 쇼핑·맥주"},
+        {day:"일", am:"자유 휴식·독서", pm:"류큐 유리공예 체험 or 쿠킹클래스"}
+      ],
+      lodging: "차탄(미국마을) 근처 콘도형 월세(150~180만원)가 가성비 최고. 나하 시내 1베드는 200만원 이상. 부엌 필수. 렌터카 없이는 생활 불편하므로 주차 포함 확인.",
+      tips: "① 오키나와 美ら海水族館은 최소 1회 필수 · ② 지역 버스(모노레일+버스 1일권) 2,000엔 활용 · ③ 이온몰(이온モール) 나하에서 대부분의 생활용품 해결 · ④ 라운드 전날 골프장 직접 전화 예약하면 그린피 할인 · ⑤ 태풍 시즌(7~9월) 피해 1~3월 방문 추천"
+    },
 
-  golfTour: [{"region":"지역","feature":"특징","monthlyCost":0,"tips":"추천 포인트"},{"region":"제주도(국내)","feature":"약 30개 코스 밀집, 산악·해안 코스 혼재, 도장깨기 문화","monthlyCost":1450000,"tips":"명문 코스 다수이나 고비용 구조(카트비·캐디피 포함)"},{"region":"태국 치앙마이","feature":"고지대(해발350m) 서늘한 기후, 7박9일 무제한 패키지 109만원대","monthlyCost":550000,"tips":"장박 시 회당 5~6만원까지 절감, 겨울철 최적"},{"region":"베트남 다낭","feature":"야간 라운드 정착, 저렴한 캐디팁(약 2.7만원)","monthlyCost":700000,"tips":"오전 휴양+오후 야간 라운드로 혹서기 대응"},{"region":"일본 미야자키","feature":"노캐디 2인 셀프 플레이, 아오시마GC·피닉스CC 등 해안 코스","monthlyCost":1600000,"tips":"연중 온화한 기후, 렌터카 이동형 시내 휴양골프"},{"region":"미국/하와이·골드코스트","feature":"대중제 평균 그린피 46만원(331달러), 프리미엄 시장","monthlyCost":4500000,"tips":"PGA급 코스 경험, 크루즈 연계 등 희소성 소비"}],
+    chiangmai: {
+      costs: [
+        {item:"숙소 (님만해민 콘도)", included:true, amount:600000, note:"월 45,000~70,000바트 1베드"},
+        {item:"식비 (2인·현지+카페)", included:true, amount:700000, note:"쌀국수 2천원, 카페 2만원"},
+        {item:"골프 그린피 (월 8회)", included:true, amount:600000, note:"7만원/회·캐디포함"},
+        {item:"마사지·스파 (주 2회)", included:true, amount:200000, note:"발마사지 시간당 7천원"},
+        {item:"교통 (그랩·선류)", included:true, amount:150000, note:"그랩 기본 2천원"},
+        {item:"관광·쿠킹클래스", included:true, amount:250000, note:"쿠킹클래스 4만원/인"},
+        {item:"항공 (인천↔치앙마이)", included:false, amount:600000, note:"직항 5시간, 왕복 60만원"},
+        {item:"합계 (항공 제외)", included:true, amount:2500000, note:"2인 기준"},
+        {item:"합계 (항공 포함)", included:true, amount:3100000, note:"2인 기준"}
+      ],
+      golfSummary: "치앙마이 근교 10개 이상 골프장. 그린피 50~100달러, 캐디팁 포함 7~12만원/회. 건기(11~4월) 오전 라운드 후 오후 문화탐방 패턴이 최적.",
+      golfCourses: [
+        {name:"치앙마이 그린밸리 CC", feature:"산 조망 18홀, 치앙마이 최고 명문 코스", greenFee:"2,800~3,500바트", cart:"카트+캐디 포함"},
+        {name:"알파인 골프 리조트", feature:"고급 리조트 연계, 유럽 설계 코스", greenFee:"3,000~4,000바트", cart:"카트+캐디 포함"},
+        {name:"라나 스파 & 골프 클럽", feature:"저렴하고 컨디션 좋은 공립형 코스", greenFee:"1,500~2,000바트", cart:"카트+캐디 포함"},
+        {name:"빈타나 골프 클럽", feature:"야간 라운드 가능, 시내 접근 편리", greenFee:"1,200~1,800바트", cart:"카트+캐디 포함"}
+      ],
+      weeklySchedule: [
+        {day:"월", am:"그린밸리 CC 오전 라운드", pm:"님만해민 카페 힐링"},
+        {day:"화", am:"도이수텝 사원 하이킹", pm:"나이트바자 & 현지 저녁"},
+        {day:"수", am:"알파인 GC 라운드", pm:"마사지 2시간 (올드시티)"},
+        {day:"목", am:"쿠킹클래스 오전", pm:"마카카이 야시장 탐방"},
+        {day:"금", am:"빈타나 GC 오전 라운드", pm:"코끼리 보호소 오후 방문"},
+        {day:"토", am:"도이인타논 국립공원 트레킹", pm:"산트리부 마을 탐방"},
+        {day:"일", am:"올드시티 사원 산책", pm:"마사지+독서 자유 시간"}
+      ],
+      lodging: "님만해민(Nimman) 또는 올드시티 근처 콘도형 월세(월 45,000~70,000바트 = 약 175만~270만원). 에어컨·세탁기·풀장 포함 여부 확인. 에어비앤비보다 현지 Facebook 그룹 '치앙마이 월세'가 훨씬 저렴.",
+      tips: "① 건기(11~4월) 최적, 우기(5~10월)는 비가 많지만 가격 50% 저렴 · ② 치앙마이 도착 후 TRUE/DTAC SIM 구입(월 300바트 무제한) · ③ 쌍태우(붉은 픽업트럭) 20바트로 어디든 이동 · ④ 쿠킹클래스는 숙소 주변 학원(Thai Farm Cooking School) 추천 · ⑤ 비자 연장: 말레이시아 페낭 콘술레이트 1박 비자런으로 60일 추가"
+    },
+
+    johorbahru: {
+      costs: [
+        {item:"숙소 (선테크/다운타운 콘도)", included:true, amount:800000, note:"月 RM2,500~3,500 1베드"},
+        {item:"식비 (2인·호커센터)", included:true, amount:600000, note:"호커 한끼 2,000~4,000원"},
+        {item:"골프 무제한 패키지", included:true, amount:600000, note:"月 RM1,500~2,500 멤버십"},
+        {item:"싱가포르 원정 (주 1~2회)", included:true, amount:400000, note:"지하철 통근·쇼핑"),
+        {item:"교통 (그랩·버스)", included:true, amount:200000, note:"싱가포르↔JB 버스 3,000원"},
+        {item:"의료 (국제병원)", included:true, amount:200000, note:"싱가포르 대비 1/3"},
+        {item:"항공 (인천↔싱가포르/JB)", included:false, amount:600000, note:"싱가포르 경유 또는 JB 직항"},
+        {item:"합계 (항공 제외)", included:true, amount:2800000, note:"2인 기준"},
+        {item:"합계 (항공 포함)", included:true, amount:3400000, note:"2인 기준"}
+      ],
+      golfSummary: "조호바루는 싱가포르 골프 치는 사람들의 '비밀 아지트'. 싱가포르 그린피의 1/3 가격에 월 무제한 패키지 이용 가능. 코스 30개 이상 밀집.",
+      golfCourses: [
+        {name:"팜 리조트 GC (Palm Resort)", feature:"싱가포르 국경 10분, 36홀 리조트", greenFee:"RM180~250/회", cart:"카트+캐디 포함"},
+        {name:"누사 다루타마 GC", feature:"대한인 이용 많음, 연습장 우수", greenFee:"RM150~200/회", cart:"카트+캐디 포함"},
+        {name:"해피밸리 GC", feature:"월 멤버십 RM2,500/2인, 무제한", greenFee:"멤버십 가입", cart:"포함"},
+        {name:"레자트 레이크 GC", feature:"호수 조망, 도심 접근 10분", greenFee:"RM130~180/회", cart:"카트+캐디 포함"}
+      ],
+      weeklySchedule: [
+        {day:"월", am:"팜 리조트 오전 라운드", pm:"JB 시내 현지 맛집"},
+        {day:"화", am:"싱가포르 원정 쇼핑(오차드)", pm:"싱가포르 호커센터 저녁"},
+        {day:"수", am:"해피밸리 GC 라운드", pm:"JB 마사지·스파"},
+        {day:"목", am:"JB 아침 재래시장", pm:"레자트 레이크 오후 라운드"},
+        {day:"금", am:"싱가포르 의료 체크업", pm:"MBS 마리나베이샌즈 저녁"},
+        {day:"토", am:"누사 다루타마 라운드", pm:"JB 로컬 푸드코트"},
+        {day:"일", am:"자유 휴식", pm:"콘도 수영장·독서"}
+      ],
+      lodging: "선테크 시티 인근 또는 JB 시티 스퀘어 옆 콘도 추천 (월 RM2,500~3,500 = 약 75~105만원). 싱가포르까지 도보+버스 30분 거리. 부엌·풀장·헬스장 포함 단지 선택.",
+      tips: "① 싱가포르 이민국 통과 시 온라인 SG Arrival Card 미리 작성 · ② JB 그랩(Grab) 앱 설치 필수, 택시보다 40% 저렴 · ③ 말레이시아 MM2H 비자: 월 $1,500 예금 증명으로 10년 거주 비자 · ④ 현지 수퍼마켓 Giant/Aeon은 싱가포르의 절반 가격 · ⑤ 국제병원 Columbia Asia/Pantai는 싱가포르 품질·1/3 가격"
+    },
+
+    malaga: {
+      costs: [
+        {item:"숙소 (미하스/벤알마데나 아파트)", included:true, amount:1500000, note:"€800~1,100/월 1베드"},
+        {item:"식비 (2인·타파스+마트)", included:true, amount:1200000, note:"타파스 맥주 2,000원·와인 3,000원"},
+        {item:"골프 그린피 (월 8회)", included:true, amount:1600000, note:"€65~120/회, 성수기 전 예약"},
+        {item:"렌터카", included:true, amount:400000, note:"€200/월, 코스타 델 솔 이동 필수"},
+        {item:"문화·관광", included:true, amount:400000, note:"그라나다·세비야 당일 여행"},
+        {item:"항공 (인천↔말라가)", included:false, amount:1200000, note:"파리/마드리드 경유, 왕복 120만"},
+        {item:"합계 (항공 제외)", included:true, amount:5100000, note:"2인 기준"},
+        {item:"합계 (항공 포함)", included:true, amount:6300000, note:"2인 기준"}
+      ],
+      golfSummary: "말라가는 '유럽의 골프 메카'. 코스타 델 솔에 70개+ 챔피언십 코스 밀집. 세계랭킹 코스 발레 로마노·라킨타 등 접근. 유럽 골프 투어 베이스캠프.",
+      golfCourses: [
+        {name:"발데라마 GC (헤레스)", feature:"라이더컵 개최, 스페인 최고 명문", greenFee:"€250~400", cart:"카트 포함"},
+        {name:"라킨타 GC (말라가)", feature:"올레아도스 CC 인근, 자연 코스", greenFee:"€80~140", cart:"카트 포함"},
+        {name:"알라우린 골프 (미하스)", feature:"미하스 백색 마을 인근, 파노라마 뷰", greenFee:"€65~100", cart:"카트 포함"},
+        {name:"몬테마요르 GC", feature:"산악형 18홀, 조용한 플레이 환경", greenFee:"€70~110", cart:"카트 포함"}
+      ],
+      weeklySchedule: [
+        {day:"월", am:"라킨타 GC 오전 라운드", pm:"말라가 시내 피카소 미술관"},
+        {day:"화", am:"그라나다 알함브라 당일 투어", pm:"그라나다 타파스 거리 저녁"},
+        {day:"수", am:"알라우린 GC 라운드", pm:"미하스 백색 마을 산책"},
+        {day:"목", am:"마르베야 해변 산책", pm:"뿌에르또 바누스 요트 항구 탐방"},
+        {day:"금", am:"몬테마요르 GC 라운드", pm:"넬하 동굴 투어"},
+        {day:"토", am:"세비야 당일 투어 (기차 2시간)", pm:"세비야 플라멩코 공연"},
+        {day:"일", am:"말라가 중앙시장 장보기", pm:"아파트 요리·와인 시간"}
+      ],
+      lodging: "미하스 코스타 또는 벤알마데나 골프 리조트 인근 아파트(€800~1,100/월). 골프장 도보·카트 접근 가능 단지 최적. 토레몰리노스 해변타운도 교통 편리.",
+      tips: "① 스페인 쉥겐 비자 90일 → 포르투갈로 이동해 180일 연장 가능 · ② 골프장 왕복 그린피는 'GolfHolidays24' 등 온라인 예약이 20~30% 저렴 · ③ 세마나 산타(부활절) 시즌은 호텔·항공 급등 주의 · ④ 현지 메르카도나(Mercadona) 슈퍼마켓 식재료 저렴하고 품질 우수 · ⑤ 말라가 자전거 대여(EMT) 월 15유로"
+    },
+
+    algarve: {
+      costs: [
+        {item:"숙소 (빌라모우라 아파트)", included:true, amount:1500000, note:"€850~1,200/월 1베드"},
+        {item:"식비 (2인)", included:true, amount:1100000, note:"신선 해산물 저렴, 와인 5유로"),
+        {item:"골프 그린피 (월 8회)", included:true, amount:1800000, note:"€70~150/회, 겨울 할인"},
+        {item:"렌터카", included:true, amount:350000, note:"€180/월, 코스 이동 필수"},
+        {item:"요트·레저", included:true, amount:300000, note:"카약·동굴 투어 €30~80"},
+        {item:"항공 (인천↔파루)", included:false, amount:1200000, note:"리스본 경유, 왕복 120만"},
+        {item:"합계 (항공 제외)", included:true, amount:5050000, note:"2인 기준"},
+        {item:"합계 (항공 포함)", included:true, amount:6250000, note:"2인 기준"}
+      ],
+      golfSummary: "알가르브는 포르투갈 '황금 해안'. 세계 100대 코스 빌라 솔(Victoria), 오세아니코 빅토리아 등 보유. 유럽 최대 골프 은퇴자 집결지, 영국·독일 골퍼 겨울 성지.",
+      golfCourses: [
+        {name:"오세아니코 빅토리아 GC", feature:"유럽투어 포르투갈 마스터스 개최 코스", greenFee:"€130~200", cart:"카트 포함"},
+        {name:"빌라 솔 GC (비담라)", feature:"세계 100대 코스, 소나무·파노라마", greenFee:"€90~150", cart:"카트 포함"},
+        {name:"파이네이로스 알토 GC", feature:"나무 사이 협소 코스, 전략적 플레이", greenFee:"€80~120", cart:"카트 포함"},
+        {name:"라 킨타 알가르브", feature:"저렴한 지역 코스, 조용한 환경", greenFee:"€55~90", cart:"카트 포함"}
+      ],
+      weeklySchedule: [
+        {day:"월", am:"오세아니코 빅토리아 라운드", pm:"빌라모우라 마리나 저녁"},
+        {day:"화", am:"라고스 황금 해변 탐방", pm:"조개·문어 해산물 저녁"},
+        {day:"수", am:"빌라 솔 GC 라운드", pm:"해안 동굴 카약 투어"},
+        {day:"목", am:"파루 구시가 & 뼈 성당", pm:"골프장 연습 + 어프로치"},
+        {day:"금", am:"파이네이로스 알토 라운드", pm:"타비라 소금 마을 탐방"},
+        {day:"토", am:"세비야/포르투 기차 당일 여행", pm:"리스본 파두 공연 관람"},
+        {day:"일", am:"해변 산책·조깅", pm:"와인 + 독서 자유 시간"}
+      ],
+      lodging: "빌라모우라(Vilamoura) 마리나 인근 아파트(€850~1,200/월)가 골프·쇼핑·식당 접근 최적. 퀴타 두 라고(Quinta do Lago) 인근은 명문 코스 도보 이동 가능하나 고가.",
+      tips: "① 알가르브 골프 패스(7일/14일)로 10~15% 절감 가능 · ② 영국인 은퇴자 커뮤니티가 많아 영어 생활 편리 · ③ 슈퍼메르카도 피아알(Pingo Doce) 신선 해산물 저렴 · ④ 렌터카 없이 알가르브 내 이동은 버스(EVA Bus) 이용 · ⑤ 포르투갈 NHR(비상거주자 세제) 혜택으로 외국 소득 세금 절감 가능"
+    },
+
+    goldcoast: {
+      costs: [
+        {item:"비즈니스석 항공 (인천↔브리즈번)", included:true, amount:5000000, note:"왕복 2인, 퍼스트/비즈니스"},
+        {item:"호텔 (4~5성 28박)", included:true, amount:5000000, note:"서퍼스파라다이스 리조트형"},
+        {item:"골프 패키지 (14회·카트·캐디)", included:true, amount:2000000, note:"스프링브룩·힌터랜드 코스 포함"},
+        {item:"식비·관광·쇼핑 (2인 28일)", included:true, amount:2000000, note:"맥도널드 빅맥 1만원 수준"},
+        {item:"합계 (올인클루시브)", included:true, amount:14000000, note:"2인·28박 패키지 기준"},
+        {item:"알파 패키지 (최저)", included:true, amount:12900000, note:"항공+호텔+골프14회"},
+        {item:"프리미엄 패키지", included:true, amount:16990000, note:"퍼스트석+최고급 리조트"}
+      ],
+      golfSummary: "골드코스트 인근 퀸즐랜드 주에 130개+ 골프장. Royal Pines는 호주 PGA 투어 코스. 7~9월 = 한국 봄날씨(최고24°C), 오전 라운드 후 해변 오후 황금 패턴.",
+      golfCourses: [
+        {name:"로열 파인스 리조트 GC", feature:"호주 PGA 투어 개최, 챔피언십 코스", greenFee:"AU$150~220", cart:"카트 포함"},
+        {name:"스프링브룩 GC", feature:"힌터랜드 산악 코스, 쿨한 기후", greenFee:"AU$80~120", cart:"카트 포함"},
+        {name:"콜람빈 GC", feature:"도심 접근 최고, 18홀 퍼블릭 코스", greenFee:"AU$60~90", cart:"카트 포함"},
+        {name:"주피터스 카지노 GC", feature:"카지노 리조트 연계, 브로드워터 조망", greenFee:"AU$120~180", cart:"카트 포함"}
+      ],
+      weeklySchedule: [
+        {day:"월", am:"로열 파인스 챔피언십 라운드", pm:"서퍼스파라다이스 비치 산책"},
+        {day:"화", am:"드림월드 테마파크", pm:"스카이포인트 전망대 석양"},
+        {day:"수", am:"스프링브룩 힌터랜드 라운드", pm:"쿨링라바 폭포 트레킹"},
+        {day:"목", am:"무비월드 반나절", pm:"사우스뱅크 파르크(브리즈번 당일)"},
+        {day:"금", am:"로열 파인스 두 번째 라운드", pm:"파시피르 페어 쇼핑"},
+        {day:"토", am:"쿨랑가타 서핑 체험", pm:"BDO(Bay Drive-Out) 럼 디스틸러리"},
+        {day:"일", am:"골드코스트 마켓(사운즈 파라다이스)", pm:"수영장 휴식·독서"}
+      ],
+      lodging: "패키지 포함 4~5성 리조트(서퍼스파라다이스 힐튼·마리오트). 자체 예약 시 아베이뉴 리조트·베로 비치 등 골드코스트 장기 숙박 전문 아파트호텔 추천.",
+      tips: "① 7~9월 성수기 전 최소 3개월 전 예약 · ② 골드코스트 트램(G:link) 월정액 $100, 해변 이동 편리 · ③ 울워스(Woolworths)/콜스(Coles) 슈퍼마켓 자취 식재료 저렴 · ④ 호주 eVisitor 비자(무료) 사전 발급 필수 · ⑤ 팁 문화 없음, 가격표 = 최종 가격"
+    },
+
+    costarica: {
+      costs: [
+        {item:"숙소 (에스카수 콘도)", included:true, amount:1200000, note:"$700~1,000/월, 경비 포함 단지"},
+        {item:"식비 (2인·현지+슈퍼마켓)", included:true, amount:900000, note:"카사도(정식) 6달러, 카페 3달러"},
+        {item:"골프 그린피 (월 6회)", included:true, amount:900000, note:"$70~130/회, 카트 포함"},
+        {item:"교통 (버스+우버)", included:true, amount:200000, note:"산호세 시내 우버 3,000원"},
+        {item:"투어·레저", included:true, amount:400000, note:"화산·커피농장·거북이 투어"},
+        {item:"의료 (CAJA 국민의료)", included:true, amount:100000, note:"Pensionado 의료보험 가입 가능"},
+        {item:"항공 (인천↔산호세)", included:false, amount:1500000, note:"LA/마이애미 경유, 왕복 150만"},
+        {item:"합계 (항공 제외)", included:true, amount:3700000, note:"2인 기준"},
+        {item:"합계 (항공 포함)", included:true, amount:5200000, note:"2인 기준"}
+      ],
+      golfSummary: "코스타리카는 중미 은퇴자 골프 허브. 산호세 근교 10개 코스, 포르케사다·과나카스테 해안 코스도 당일 이용 가능. Pensionado 비자 시 시설 이용 20% 할인.",
+      golfCourses: [
+        {name:"라 구아카마야 GC", feature:"산호세 30분, 화산 조망 18홀", greenFee:"$80~120", cart:"카트 포함"},
+        {name:"카라이그레스 GC", feature:"에스카수 인근 10분, 퍼블릭 코스", greenFee:"$65~90", cart:"카트 포함"},
+        {name:"마리옷 로스 수에뇨스 GC", feature:"해안 리조트 코스, 특급 시설", greenFee:"$120~180", cart:"카트 포함"},
+        {name:"포르케사다 CC", feature:"안개 산악형, 카트 필수 급경사", greenFee:"$55~80", cart:"카트 포함"}
+      ],
+      weeklySchedule: [
+        {day:"월", am:"라 구아카마야 오전 라운드", pm:"에스카수 쇼핑몰(멀티프라자)"},
+        {day:"화", am:"아레날 화산 당일 투어", pm:"온천 & 화산 수영"},
+        {day:"수", am:"카라이그레스 GC 라운드", pm:"산호세 메르카도 센트랄 탐방"},
+        {day:"목", am:"커피농장 투어 (포아스 화산)", pm:"카페 브리트 커피 시음"},
+        {day:"금", am:"마리옷 로스수에뇨스 골프", pm:"해안 리조트 레스토랑"},
+        {day:"토", am:"토르투게로 거북이 방류 투어", pm:"카리브해 해변 1박"},
+        {day:"일", am:"자유 시간", pm:"에스카수 카페·독서 힐링"}
+      ],
+      lodging: "에스카수(Escazu) 또는 산타아나(Santa Ana) 게이티드 콤플렉스 콘도(월 $700~1,000). 경비원·수영장·헬스장 24시간 포함이 필수. 치안을 위해 반드시 경비 단지 선택.",
+      tips: "① Pensionado 비자: 월 $1,000 연금 증명 → 10년 거주권 + 의료·교통 20% 할인 · ② 코스타리카 전기차 보급률 중미 1위, 우버 전기차 이용 가능 · ③ 스페인어 기초 앱(듀오링고) 3개월 준비 추천 · ④ 치안: 에스카수는 안전, 산호세 시내 혼잡 지역 야간 주의 · ⑤ 항공: LA↔산호세 아메리칸항공 직항 4시간, 인천→LA→산호세 환승 추천"
+    }
+  },
+
+  golfTour: [
+    {"region":"제주도 (국내)","feature":"약 30개 코스 밀집, 산악·해안 코스 혼재, 클럽하우스 식사 포함 문화","monthlyCost":1450000,"tips":"명문 코스 다수이나 고비용(카트비+캐디피 필수). 비성수기(1~2월) 50% 할인권 활용"},
+    {"region":"태국 치앙마이","feature":"고지대(해발350m) 서늘한 기후, 7박9일 무제한 패키지 109만원대, 캐디 포함","monthlyCost":550000,"tips":"장박 시 회당 5~6만원까지 절감 가능. 겨울(11~4월) 건기가 최적 시즌"},
+    {"region":"베트남 다낭","feature":"야간 라운드 정착 문화, 캐디팁 약 2.7만원, BRG·바나힐스 등 세계적 코스","monthlyCost":700000,"tips":"오전 휴양 + 오후 야간 라운드로 혹서기 대응. 한국인 커뮤니티 거대"},
+    {"region":"일본 미야자키","feature":"노캐디 2인 셀프 플레이, 아오시마GC·피닉스CC 해안 코스, 연중 온화 기후","monthlyCost":1600000,"tips":"렌터카 이동형 시내 휴양골프. 미야자키 소고기(와규)와 현지 음식 수준 높음"},
+    {"region":"말레이시아 조호바루","feature":"싱가포르 코즈웨이 코앞, 무제한 월 멤버십 RM2,500, 30개+ 코스","monthlyCost":600000,"tips":"싱가포르 그린피의 1/3. 골프 후 싱가포르 가서 쇼핑·맛집 황금 조합"},
+    {"region":"미국 하와이·골드코스트","feature":"대중제 평균 그린피 46만원, PGA급 코스, 비즈니스석 패키지 연계","monthlyCost":4500000,"tips":"가성비보다 경험 가치 중심. 크루즈 골프 패키지 또는 올인클루시브 선택"}
+  ],
 
   seasonalPicks: {
     "봄": {"domestic": ["제주 성산","전북 전주","전남 강진","경남 남해"], "overseas": ["베트남 다낭","체코 프라하","포르투갈 리스본","멕시코 멕시코시티"]},
-    "여름": {"domestic": ["강원 강릉","부산 해운대","전북 부안","경북 포항"], "overseas": ["인도네시아 발리(짱구)","조지아 바투미","호주 브리즈번","캐나다 밴쿠버"]},
+    "여름": {"domestic": ["강원 강릉","부산 해운대","전북 부안","경북 포항"], "overseas": ["인도네시아 발리","조지아 바투미","호주 브리즈번","캐나다 밴쿠버"]},
     "가을": {"domestic": ["제주 서귀포","경북 안동","전남 목포","충남 태안"], "overseas": ["일본 후쿠오카","조지아 트빌리시","헝가리 부다페스트","대만 타이베이"]},
-    "겨울": {"domestic": ["제주 대정","제주 남원","강원 화천"], "overseas": ["태국 치앙마이","말레이시아 쿠알라룸푸르","스페인 카나리아(테네리페)"]}
+    "겨울": {"domestic": ["제주 대정","제주 남원","강원 화천"], "overseas": ["태국 치앙마이","말레이시아 쿠알라룸푸르","스페인 카나리아 테네리페"]}
   }
 };

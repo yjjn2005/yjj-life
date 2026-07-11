@@ -285,6 +285,60 @@ td .city-name-sub { font-size: 10.5px; color: var(--text-muted); }
 body.edit-mode .editable { outline: 2px dashed rgba(201,169,97,.5); border-radius: 4px; }
 body.edit-mode .editable:hover { outline-color: var(--gold); background: rgba(201,169,97,.05); cursor: pointer; }
 
+/* ─── MASTER PLAN MODAL ─── */
+.mp-year-block { border-bottom: 1px solid var(--border); }
+.mp-year-block:last-child { border-bottom: none; }
+.mp-year-head { display: grid; grid-template-columns: 56px 1fr auto; align-items: center; gap: 12px; padding: 13px 20px; cursor: pointer; transition: background .12s; }
+.mp-year-head:hover { background: #f5f3ef; }
+.mp-year-num { width: 46px; height: 46px; border-radius: 11px; background: var(--navy); color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; line-height: 1.2; flex-shrink: 0; }
+.mp-year-num span { font-size: 17px; font-weight: 800; color: var(--gold-light); }
+.mp-year-title { font-size: 13.5px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+.mp-year-sub { font-size: 11px; color: var(--text-muted); }
+.mp-year-meta { text-align: right; }
+.mp-year-cost { font-size: 12.5px; font-weight: 700; color: var(--gold-deep); }
+.mp-priority-HIGH { display:inline-block; color:#166534; background:#DCFCE7; padding:2px 7px; border-radius:6px; font-size:10px; font-weight:700; }
+.mp-priority-MED  { display:inline-block; color:#92400E; background:#FEF9C3; padding:2px 7px; border-radius:6px; font-size:10px; font-weight:700; }
+.mp-priority-LOW  { display:inline-block; color:var(--text-muted); background:#F3F4F6; padding:2px 7px; border-radius:6px; font-size:10px; font-weight:700; }
+.mp-year-body { padding: 0 20px 14px 88px; display: none; }
+.mp-year-body.open { display: block; }
+.mp-summary-box { font-size: 12.5px; color: var(--text); line-height: 1.7; margin-bottom: 9px; padding: 9px 13px; background: #F0F4F8; border-radius: 7px; }
+.mp-cities-chips { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 9px; }
+.mp-city-chip { padding: 3px 10px; border-radius: 12px; background: var(--navy); color: #fff; font-size: 11px; font-weight: 600; }
+.mp-info-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.mp-info-item { font-size: 11px; color: var(--text-muted); }
+.mp-info-item strong { color: var(--navy); }
+
+/* ─── FEATURED CARDS ─── */
+.fc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 18px; }
+.fc-card { background: var(--bg2); border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow); overflow: hidden; cursor: pointer; transition: all .2s; }
+.fc-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: var(--gold); }
+.fc-cover { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); padding: 16px 18px 12px; position: relative; }
+.fc-flag { font-size: 12px; color: rgba(255,255,255,.75); margin-bottom: 4px; }
+.fc-name { font-family: 'Noto Serif KR',serif; font-size: 18px; font-weight: 700; color: #fff; }
+.fc-en { font-size: 11px; color: rgba(255,255,255,.55); margin-top: 2px; }
+.fc-theme-badge { position: absolute; top: 13px; right: 13px; background: var(--gold); color: var(--navy); font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 9px; max-width: 100px; text-align: center; }
+.fc-cover-meta { display: flex; gap: 6px; margin-top: 9px; flex-wrap: wrap; }
+.fc-meta-chip { font-size: 10px; color: rgba(255,255,255,.8); background: rgba(255,255,255,.12); padding: 3px 8px; border-radius: 7px; }
+.fc-body { padding: 13px 16px; }
+.fc-cost-band { text-align: center; padding: 9px; background: linear-gradient(135deg,#FEF9C3,#FFF7ED); border-radius: 8px; margin-bottom: 11px; }
+.fc-cost-label { font-size: 10.5px; color: var(--text-muted); margin-bottom: 1px; }
+.fc-cost-val { font-size: 16px; font-weight: 800; color: var(--gold-deep); }
+.fc-stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+.fc-stat { background: var(--bg); border-radius: 7px; padding: 8px 11px; }
+.fc-stat-lbl { font-size: 10px; color: var(--text-muted); margin-bottom: 1px; }
+.fc-stat-v { font-size: 12.5px; font-weight: 700; color: var(--navy); }
+.fc-desc { font-size: 12px; color: var(--text-muted); line-height: 1.65; margin-bottom: 11px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.fc-cta { display: block; text-align: center; background: var(--navy); color: #fff; border-radius: 8px; padding: 8px; font-size: 12.5px; font-weight: 700; transition: background .18s; }
+.fc-cta:hover { background: var(--navy-light); }
+
+/* ─── DETAIL TABS ─── */
+.detail-tabs { display: flex; gap: 0; margin-bottom: 16px; border-bottom: 2px solid var(--border); overflow-x: auto; scrollbar-width: none; }
+.detail-tabs::-webkit-scrollbar { display: none; }
+.detail-tab-btn { padding: 9px 16px; font-size: 12.5px; font-weight: 600; cursor: pointer; border: none; background: transparent; font-family: inherit; color: var(--text-muted); border-bottom: 2px solid transparent; margin-bottom: -2px; white-space: nowrap; transition: all .15s; }
+.detail-tab-btn.active { color: var(--navy); border-bottom-color: var(--navy); }
+.detail-tab-panel { display: none; }
+.detail-tab-panel.active { display: block; }
+
 @media(max-width:560px){
   .container { padding: 14px 10px; }
   .hero-title { font-size: 17px; }
@@ -337,7 +391,10 @@ body.edit-mode .editable:hover { outline-color: var(--gold); background: rgba(20
     <div class="season-grid" id="seasonGrid"></div>
     <div class="section-title">⛳ 골프투어 가성비 비교</div>
     <div id="golfTopCards" style="margin-bottom:20px"></div>
-    <div class="section-title">💎 10개년 마스터플랜</div>
+    <div class="section-title" style="justify-content:space-between;flex-wrap:wrap;gap:10px">
+      <span>💎 10개년 마스터플랜</span>
+      <button class="btn btn-gold" id="btnMasterPlan" style="font-size:13px">📋 마스터플랜 전체 보기</button>
+    </div>
     <div class="panel" style="margin-bottom:24px">
       <div id="yearlyContainer" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:0"></div>
     </div>
@@ -519,6 +576,24 @@ body.edit-mode .editable:hover { outline-color: var(--gold); background: rgba(20
           <p style="margin-top:9px;font-size:12px;color:var(--text-muted)">편집 모드 중 항목 클릭 시 수정 가능 · Ctrl+E 단축키</p>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- MASTER PLAN MODAL -->
+<div class="modal-bg" id="masterPlanBg">
+  <div class="modal" style="max-width:780px;width:96vw">
+    <div class="modal-head" style="background:var(--navy)">
+      <div>
+        <div class="modal-title" style="color:#fff;font-family:'Noto Serif KR',serif;font-size:16px">💎 유재진 10개년 한달살기 마스터플랜</div>
+        <div class="modal-sub" style="color:rgba(255,255,255,.6)">2026~2036 · 해외 50개국 100도시 완주 로드맵</div>
+      </div>
+      <button class="modal-close" id="masterPlanClose" style="background:rgba(255,255,255,.1);color:#fff">✕</button>
+    </div>
+    <div class="modal-body" id="masterPlanBody" style="padding:0"></div>
+    <div class="modal-footer" style="background:var(--bg)">
+      <button class="btn btn-outline" id="masterPlanExport">📥 PDF 저장</button>
+      <button class="btn btn-navy" id="masterPlanCloseBtn">닫기</button>
     </div>
   </div>
 </div>
