@@ -407,7 +407,10 @@ body.edit-mode .editable:hover { outline-color: var(--gold); background: rgba(20
   <div class="container">
     <div class="hero-band editable" data-edit="header">
       <div class="hero-eyebrow">2026 · Global Lifestyle · Golf Tour</div>
-      <div class="hero-title" id="heroTitle">유재진 한달살기 & 골프투어 마스터플랜</div>
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:7px">
+        <div class="hero-title" id="heroTitle" style="margin-bottom:0">유재진 한달살기 & 골프투어 마스터플랜</div>
+        <button class="btn btn-gold" id="btnMasterPlan" style="font-size:12px;padding:6px 14px;white-space:nowrap;flex-shrink:0">📋 10개년 마스터플랜</button>
+      </div>
       <div class="hero-sub">해외 100대 도시 · 국내 100대 도시 통합 분석<br>5070 액티브 시니어를 위한 체류형 여행 & 골프 큐레이션</div>
       <div class="hero-meta">업데이트: <span id="updatedDate">2026-07-11</span> · 언급지수 35% · 안전지수 25% · 체류비 25% · 골프경제성 15% 가중 종합평가</div>
     </div>
@@ -426,9 +429,8 @@ body.edit-mode .editable:hover { outline-color: var(--gold); background: rgba(20
     <div class="season-grid" id="seasonGrid"></div>
     <div class="section-title">⛳ 골프투어 가성비 비교</div>
     <div id="golfTopCards" style="margin-bottom:20px"></div>
-    <div class="section-title" style="justify-content:space-between;flex-wrap:wrap;gap:10px">
+    <div class="section-title">
       <span>💎 10개년 마스터플랜</span>
-      <button class="btn btn-gold" id="btnMasterPlan" style="font-size:13px">📋 마스터플랜 전체 보기</button>
     </div>
     <div class="panel" style="margin-bottom:24px">
       <div id="yearlyContainer" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:0"></div>
