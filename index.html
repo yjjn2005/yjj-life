@@ -2,897 +2,543 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#1E3A5F">
-<title>유재진 한달살기 · 마스터플랜</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>유재진 한달살기 & 골프투어</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#F7F3EC;
-  --bg-soft:#FAF7F2;
-  --surface:#FFFFFF;
-  --surface-2:#FDFBF7;
-  --navy:#1E3A5F;
-  --navy-deep:#142849;
-  --gold:#C9A961;
-  --gold-deep:#A8893D;
-  --gold-soft:#E8D9B0;
-  --sage:#7A8B6F;
-  --burgundy:#7A2D3F;
-  --text:#1F1F1F;
-  --text-muted:#6B6B6B;
-  --text-light:#9A9A9A;
-  --border:#E8E1D3;
-  --border-soft:#F0EAE0;
-  --shadow-sm: 0 1px 2px rgba(20,40,73,.04), 0 1px 3px rgba(20,40,73,.06);
-  --shadow:0 4px 14px rgba(20,40,73,.06), 0 2px 4px rgba(20,40,73,.04);
-  --shadow-lg:0 20px 50px -12px rgba(20,40,73,.18), 0 8px 18px -8px rgba(20,40,73,.10);
+:root {
+  --navy: #1E3A5F;
+  --navy-light: #2C5282;
+  --gold: #C9A961;
+  --gold-light: #E8C97A;
+  --gold-deep: #A07C30;
+  --sage: #6B8F71;
+  --bg: #F8F6F1;
+  --bg2: #FFFFFF;
+  --border: #E2D9C9;
+  --text: #1A1A2E;
+  --text-muted: #6B7280;
+  --text-light: #9CA3AF;
+  --shadow: 0 2px 12px rgba(30,58,95,.10);
+  --shadow-md: 0 4px 20px rgba(30,58,95,.14);
   --radius: 14px;
-  --radius-lg: 22px;
+  --green: #16A34A;
+  --orange: #EA580C;
+  --red: #DC2626;
 }
-*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-html,body{height:100%}
-body{
-  font-family:'Pretendard','Noto Sans KR',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.65;
-  letter-spacing:-.005em;
-  -webkit-font-smoothing:antialiased;
-  font-feature-settings:"ss03","ss04","tnum";
-  padding-bottom:env(safe-area-inset-bottom);
-}
-.serif{font-family:'Noto Serif KR',serif;letter-spacing:-.02em}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Pretendard','Apple SD Gothic Neo',sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; }
 
-/* ========== TOP BAR ========== */
-.topbar{
-  position:sticky;top:0;z-index:50;
-  background:rgba(247,243,236,.85);
-  backdrop-filter:saturate(180%) blur(18px);
-  -webkit-backdrop-filter:saturate(180%) blur(18px);
-  border-bottom:1px solid var(--border-soft);
-  padding:14px 22px;
-  padding-top:max(14px,env(safe-area-inset-top));
-}
-.topbar-inner{
-  max-width:1280px;margin:0 auto;
-  display:flex;align-items:center;justify-content:space-between;gap:14px;
-}
-.brand{display:flex;align-items:center;gap:12px;min-width:0}
-.brand-mark{
-  width:38px;height:38px;border-radius:11px;
-  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);
-  color:var(--gold);display:flex;align-items:center;justify-content:center;
-  font-family:'Noto Serif KR';font-weight:700;font-size:18px;
-  box-shadow:0 6px 14px -6px rgba(20,40,73,.5);
-  flex-shrink:0;
-}
-.brand-text{display:flex;flex-direction:column;line-height:1.15;min-width:0}
-.brand-title{font-family:'Noto Serif KR';font-weight:700;color:var(--navy);font-size:15px;letter-spacing:.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.brand-sub{font-size:10.5px;color:var(--gold-deep);font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+/* ─── TOPBAR ─── */
+.topbar { position: sticky; top: 0; z-index: 100; background: var(--navy); padding: 0 16px; display: flex; align-items: center; gap: 12px; height: 52px; box-shadow: 0 2px 16px rgba(0,0,0,.25); }
+.topbar-brand { color: #fff; font-size: 14px; font-weight: 700; white-space: nowrap; }
+.topbar-brand span { color: var(--gold-light); }
+.nav-tabs { display: flex; gap: 2px; flex: 1; overflow-x: auto; scrollbar-width: none; }
+.nav-tabs::-webkit-scrollbar { display: none; }
+.nav-tab { padding: 7px 12px; color: rgba(255,255,255,.7); font-size: 13px; font-weight: 500; border-radius: 8px; cursor: pointer; white-space: nowrap; transition: all .2s; border: none; background: transparent; font-family: inherit; }
+.nav-tab:hover { background: rgba(255,255,255,.1); color: #fff; }
+.nav-tab.active { background: var(--gold); color: var(--navy); font-weight: 700; }
+.topbar-right { display: flex; align-items: center; gap: 8px; margin-left: auto; flex-shrink: 0; }
+.sync-badge { display: flex; align-items: center; gap: 5px; color: rgba(255,255,255,.55); font-size: 11px; }
+.sync-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage); }
+.sync-dot.dirty { background: var(--gold); animation: pulse .8s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+.ic-btn { width: 30px; height: 30px; border-radius: 7px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,.1); color: rgba(255,255,255,.7); cursor: pointer; font-size: 14px; border: none; transition: all .2s; font-family: inherit; }
+.ic-btn:hover, .ic-btn.active { background: var(--gold); color: var(--navy); }
 
-.top-actions{display:flex;gap:8px;align-items:center;flex-shrink:0}
-.icon-btn{
-  width:38px;height:38px;border-radius:11px;border:1px solid var(--border);
-  background:var(--surface);color:var(--navy);cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  transition:all .2s ease;font-size:17px;
-}
-.icon-btn:hover{background:var(--navy);color:var(--gold);border-color:var(--navy);transform:translateY(-1px)}
-.icon-btn.active{background:var(--navy);color:var(--gold);border-color:var(--navy)}
-.sync-pill{
-  display:flex;align-items:center;gap:7px;
-  padding:7px 13px;border-radius:999px;
-  background:var(--surface);border:1px solid var(--border);
-  font-size:12px;color:var(--text-muted);font-weight:500;
-}
-.sync-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.18)}
-.sync-dot.dirty{background:#f59e0b;box-shadow:0 0 0 3px rgba(245,158,11,.2)}
+/* ─── VIEWS ─── */
+.view { display: none; }
+.view.active { display: block; }
+.container { max-width: 1200px; margin: 0 auto; padding: 24px 16px; }
+.section-title { font-family: 'Noto Serif KR',serif; font-size: 19px; font-weight: 700; color: var(--navy); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+.section-title .badge { font-family: 'Pretendard',sans-serif; font-size: 11px; font-weight: 600; padding: 2px 8px; background: var(--gold); color: var(--navy); border-radius: 20px; }
 
-/* ========== NAV TABS ========== */
-.nav-tabs{
-  max-width:1280px;margin:0 auto;
-  display:flex;gap:4px;padding:10px 22px 0;
-  overflow-x:auto;scrollbar-width:none;
-}
-.nav-tabs::-webkit-scrollbar{display:none}
-.nav-tab{
-  padding:10px 18px;border-radius:11px 11px 0 0;
-  background:transparent;border:none;cursor:pointer;
-  font-family:inherit;font-size:14px;font-weight:600;color:var(--text-muted);
-  white-space:nowrap;transition:all .2s;
-  border-bottom:2.5px solid transparent;
-  position:relative;
-}
-.nav-tab:hover{color:var(--navy)}
-.nav-tab.active{color:var(--navy);border-bottom-color:var(--gold)}
+/* ─── DASHBOARD ─── */
+.hero-band { background: linear-gradient(135deg, var(--navy) 0%, #2C5282 100%); border-radius: var(--radius); padding: 28px 24px; margin-bottom: 20px; color: #fff; position: relative; overflow: hidden; }
+.hero-band::after { content: '⛳'; position: absolute; right: 24px; top: 50%; transform: translateY(-50%); font-size: 72px; opacity: .07; }
+.hero-eyebrow { font-size: 11px; color: var(--gold-light); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 5px; }
+.hero-title { font-family: 'Noto Serif KR',serif; font-size: 22px; font-weight: 700; margin-bottom: 7px; }
+.hero-sub { font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.7; }
+.hero-meta { margin-top: 12px; font-size: 11px; color: rgba(255,255,255,.45); }
 
-/* ========== HERO ========== */
-.hero{
-  max-width:1280px;margin:0 auto;
-  padding:48px 22px 32px;
-  background:radial-gradient(ellipse at top right,rgba(201,169,97,.12) 0%,transparent 60%),
-             radial-gradient(ellipse at bottom left,rgba(30,58,95,.06) 0%,transparent 50%);
-}
-.hero-eyebrow{
-  display:inline-flex;align-items:center;gap:9px;
-  padding:6px 14px;border-radius:999px;
-  background:rgba(201,169,97,.14);color:var(--gold-deep);
-  font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
-  margin-bottom:22px;
-}
-.hero-eyebrow::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--gold)}
-.hero h1{
-  font-family:'Noto Serif KR';font-weight:700;
-  font-size:clamp(34px,5.5vw,58px);line-height:1.12;
-  color:var(--navy);letter-spacing:-.025em;
-}
-.hero h1 .accent{color:var(--gold-deep);font-style:italic;font-weight:400}
-.hero-lede{
-  margin-top:18px;max-width:680px;
-  font-size:clamp(15px,1.7vw,17.5px);color:var(--text-muted);font-weight:400;line-height:1.7;
-}
-.hero-meta{
-  margin-top:26px;display:flex;flex-wrap:wrap;gap:18px 28px;
-  font-size:12.5px;color:var(--text-muted);
-}
-.hero-meta span{display:inline-flex;align-items:center;gap:8px}
-.hero-meta b{color:var(--navy);font-weight:700;letter-spacing:.02em}
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(148px,1fr)); gap: 12px; margin-bottom: 20px; }
+.stat-card { background: var(--bg2); border-radius: var(--radius); padding: 16px 18px; border: 1px solid var(--border); box-shadow: var(--shadow); }
+.stat-label { font-size: 11px; color: var(--text-muted); margin-bottom: 5px; text-transform: uppercase; letter-spacing: .4px; }
+.stat-value { font-size: 26px; font-weight: 700; color: var(--navy); line-height: 1; }
+.stat-value span { font-size: 12px; font-weight: 500; color: var(--text-muted); }
+.stat-sub { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
 
-/* ========== STATS ========== */
-.stats{
-  max-width:1280px;margin:0 auto;
-  padding:8px 22px 40px;
-  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
-}
-.stat-card{
-  position:relative;
-  background:var(--surface);border-radius:var(--radius-lg);
-  padding:24px 22px;
-  box-shadow:var(--shadow-sm);
-  border:1px solid var(--border-soft);
-  overflow:hidden;
-  transition:all .25s ease;
-}
-.stat-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-.stat-card::before{
-  content:"";position:absolute;top:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,var(--gold) 0%,var(--gold-soft) 100%);
-}
-.stat-label{font-size:11px;font-weight:700;color:var(--gold-deep);letter-spacing:.18em;text-transform:uppercase;margin-bottom:10px}
-.stat-value{font-family:'Noto Serif KR';font-weight:700;font-size:38px;color:var(--navy);letter-spacing:-.02em;line-height:1}
-.stat-sub{margin-top:6px;font-size:12.5px;color:var(--text-muted)}
-@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+@media(max-width:680px){ .two-col { grid-template-columns:1fr; } }
+.panel { background: var(--bg2); border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow); overflow: hidden; }
+.panel-head { padding: 12px 16px; background: var(--navy); display: flex; align-items: center; justify-content: space-between; }
+.panel-head-title { color: #fff; font-size: 13px; font-weight: 700; }
+.panel-head-sub { color: rgba(255,255,255,.5); font-size: 11px; }
+.rank-row { display: grid; grid-template-columns: 28px 1fr auto; align-items: center; gap: 8px; padding: 9px 16px; border-bottom: 1px solid var(--border); cursor: pointer; transition: background .12s; }
+.rank-row:last-child { border-bottom: none; }
+.rank-row:hover { background: #f5f3ef; }
+.rank-num { font-size: 13px; font-weight: 700; color: var(--gold-deep); text-align: center; }
+.rank-num.top3 { color: var(--gold); font-size: 15px; }
+.rank-city { font-size: 13px; font-weight: 600; color: var(--navy); }
+.rank-city-en { font-size: 10.5px; color: var(--text-muted); }
+.rank-cost { font-size: 12px; color: var(--gold-deep); font-weight: 600; white-space: nowrap; }
 
-/* ========== SECTION COMMON ========== */
-.section{max-width:1280px;margin:0 auto;padding:36px 22px}
-.section-head{
-  display:flex;align-items:flex-end;justify-content:space-between;gap:20px;
-  margin-bottom:24px;flex-wrap:wrap;
-}
-.section-title{
-  font-family:'Noto Serif KR';font-weight:700;
-  font-size:clamp(22px,3vw,30px);color:var(--navy);letter-spacing:-.02em;
-}
-.section-title .badge{
-  display:inline-block;margin-left:10px;padding:3px 10px;border-radius:6px;
-  background:var(--navy);color:var(--gold);
-  font-family:'Pretendard';font-size:12px;font-weight:700;letter-spacing:.05em;
-  vertical-align:middle;
-}
-.section-desc{font-size:13.5px;color:var(--text-muted);margin-top:6px;font-weight:400}
+.season-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 20px; }
+@media(max-width:560px){ .season-grid { grid-template-columns:repeat(2,1fr); } }
+.season-card { background: var(--bg2); border-radius: var(--radius); padding: 14px; border: 1px solid var(--border); cursor: pointer; transition: all .2s; }
+.season-card:hover { border-color: var(--gold); box-shadow: var(--shadow-md); }
+.season-icon { font-size: 20px; margin-bottom: 5px; }
+.season-name { font-weight: 700; color: var(--navy); font-size: 13.5px; margin-bottom: 7px; }
+.season-pick { font-size: 11.5px; color: var(--text-muted); line-height: 1.55; }
+.season-pick strong { color: var(--navy); }
 
-/* ========== YEARLY PLAN ========== */
-.timeline{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;
-}
-.year-card{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-  padding:20px 22px;cursor:pointer;transition:all .25s;
-  position:relative;
-}
-.year-card:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:var(--gold-soft)}
-.year-card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-.year-num{
-  font-family:'Noto Serif KR';font-weight:700;font-size:32px;color:var(--navy);
-  line-height:1;letter-spacing:-.02em;
-}
-.year-num span{font-size:14px;color:var(--text-muted);font-weight:400;margin-left:4px}
-.priority{
-  font-size:10.5px;font-weight:700;letter-spacing:.1em;
-  padding:4px 10px;border-radius:999px;
-}
-.priority.HIGH{background:rgba(122,45,63,.08);color:var(--burgundy)}
-.priority.MED{background:rgba(201,169,97,.14);color:var(--gold-deep)}
-.priority.LOW{background:rgba(122,139,111,.12);color:var(--sage)}
-.year-region{font-weight:600;color:var(--navy);font-size:14.5px;margin-bottom:4px}
-.year-cities{font-size:13px;color:var(--text-muted);line-height:1.55}
-.year-bottom{
-  margin-top:14px;padding-top:12px;border-top:1px dashed var(--border);
-  display:flex;justify-content:space-between;align-items:center;font-size:12px;
-}
-.year-cost{color:var(--gold-deep);font-weight:600}
-.year-q{color:var(--text-muted)}
+/* ─── EXPLORE ─── */
+.filter-bar { background: var(--bg2); border-radius: var(--radius); padding: 14px 16px; border: 1px solid var(--border); box-shadow: var(--shadow); margin-bottom: 16px; }
+.filter-search { width: 100%; padding: 9px 13px; border-radius: 9px; border: 1.5px solid var(--border); font-size: 13.5px; font-family: inherit; background: var(--bg); outline: none; transition: border-color .2s; margin-bottom: 12px; }
+.filter-search:focus { border-color: var(--navy); }
+.filter-row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-bottom: 8px; }
+.filter-row:last-child { margin-bottom: 0; }
+.filter-label { font-size: 11.5px; color: var(--text-muted); white-space: nowrap; font-weight: 600; min-width: 54px; }
+.filter-chip { padding: 5px 11px; border-radius: 18px; font-size: 12px; font-weight: 500; border: 1.5px solid var(--border); background: var(--bg); color: var(--text-muted); cursor: pointer; transition: all .12s; white-space: nowrap; }
+.filter-chip:hover { border-color: var(--navy); color: var(--navy); }
+.filter-chip.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+.filter-chip.golf-on.active { background: var(--green); border-color: var(--green); }
 
-/* ========== FEATURED CITIES ========== */
-.featured-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px;
-}
-.feature-card{
-  position:relative;background:var(--surface);border-radius:var(--radius-lg);
-  overflow:hidden;cursor:pointer;
-  border:1px solid var(--border-soft);
-  box-shadow:var(--shadow-sm);
-  transition:all .3s cubic-bezier(.2,.8,.2,1);
-}
-.feature-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--gold-soft)}
-.feature-cover{
-  height:130px;
-  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 70%,#0a1828 100%);
-  position:relative;overflow:hidden;
-  display:flex;align-items:flex-end;padding:18px 22px;
-}
-.feature-cover::after{
-  content:"";position:absolute;top:-50%;right:-30%;width:200px;height:200px;
-  background:radial-gradient(circle,rgba(201,169,97,.32) 0%,transparent 65%);
-  filter:blur(10px);
-}
-.feature-flag{
-  position:absolute;top:14px;right:14px;
-  background:rgba(255,255,255,.95);
-  padding:5px 12px;border-radius:999px;font-size:12px;font-weight:600;color:var(--navy);
-  backdrop-filter:blur(8px);
-}
-.feature-city{
-  font-family:'Noto Serif KR';font-weight:700;font-size:26px;
-  color:#fff;letter-spacing:-.02em;line-height:1.1;
-  position:relative;z-index:1;
-}
-.feature-country{font-size:12px;color:var(--gold-soft);font-weight:500;margin-top:2px;letter-spacing:.04em;position:relative;z-index:1}
-.feature-body{padding:18px 22px 20px}
-.feature-rating{font-size:14px;color:var(--gold);letter-spacing:.08em;margin-bottom:10px}
-.feature-row{display:flex;justify-content:space-between;align-items:baseline;padding:6px 0;border-bottom:1px dotted var(--border)}
-.feature-row:last-child{border-bottom:none}
-.feature-label{font-size:11.5px;color:var(--text-light);font-weight:500;letter-spacing:.04em}
-.feature-val{font-size:13px;color:var(--text);font-weight:600;text-align:right}
-.feature-val.cost{color:var(--gold-deep)}
-.feature-cta{
-  margin-top:14px;display:flex;align-items:center;justify-content:space-between;
-  padding:10px 0 0;font-size:12.5px;color:var(--navy);font-weight:600;
-}
-.feature-cta::after{content:"→";font-size:16px;transition:transform .2s}
-.feature-card:hover .feature-cta::after{transform:translateX(4px)}
+.explore-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+.result-count { font-size: 13px; color: var(--text-muted); }
+.result-count strong { color: var(--navy); font-size: 15px; }
+.sort-select { padding: 6px 10px; border-radius: 7px; border: 1.5px solid var(--border); font-size: 12.5px; font-family: inherit; background: var(--bg2); outline: none; cursor: pointer; }
+.view-toggle { display: flex; gap: 3px; }
+.view-btn { width: 32px; height: 32px; border-radius: 7px; display: flex; align-items: center; justify-content: center; border: 1.5px solid var(--border); background: var(--bg2); color: var(--text-muted); cursor: pointer; font-size: 14px; transition: all .12s; }
+.view-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
 
-/* ========== 100 CITIES TABLE ========== */
-.cities-toolbar{
-  display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap;align-items:center;
-}
-.search-box{
-  flex:1;min-width:200px;position:relative;
-}
-.search-box input{
-  width:100%;padding:11px 14px 11px 40px;border-radius:11px;
-  border:1px solid var(--border);background:var(--surface);
-  font-family:inherit;font-size:14px;color:var(--text);
-  transition:all .2s;
-}
-.search-box input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,169,97,.18)}
-.search-box::before{
-  content:"⌕";position:absolute;left:14px;top:50%;transform:translateY(-50%);
-  color:var(--text-light);font-size:18px;
-}
-.filter-chip{
-  padding:9px 14px;border-radius:999px;border:1px solid var(--border);
-  background:var(--surface);font-family:inherit;font-size:12.5px;font-weight:600;
-  color:var(--text-muted);cursor:pointer;transition:all .2s;white-space:nowrap;
-}
-.filter-chip:hover{border-color:var(--gold)}
-.filter-chip.active{background:var(--navy);color:var(--gold);border-color:var(--navy)}
+/* CITY CARDS */
+.city-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(268px,1fr)); gap: 14px; }
+.city-card { background: var(--bg2); border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow); overflow: hidden; cursor: pointer; transition: all .18s; }
+.city-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: var(--gold); }
+.city-card-header { padding: 14px 14px 11px; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); position: relative; }
+.city-rank-badge { position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,.15); color: #fff; font-size: 10.5px; font-weight: 700; padding: 2px 7px; border-radius: 9px; }
+.city-card-name { font-family: 'Noto Serif KR',serif; font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 2px; }
+.city-card-en { font-size: 10.5px; color: rgba(255,255,255,.6); }
+.city-card-body { padding: 12px 14px; }
+.city-card-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.city-card-row-label { font-size: 11px; color: var(--text-muted); }
+.city-card-row-val { font-size: 12px; font-weight: 600; color: var(--navy); }
+.city-card-cost { font-size: 14px; font-weight: 700; color: var(--gold-deep); margin-top: 5px; }
+.city-card-cost span { font-size: 10.5px; color: var(--text-muted); font-weight: 400; }
+.city-card-footer { padding: 9px 14px; border-top: 1px solid var(--border); display: flex; gap: 5px; flex-wrap: wrap; }
 
-.cities-table-wrap{
-  background:var(--surface);border-radius:var(--radius);
-  border:1px solid var(--border-soft);overflow:hidden;
-  box-shadow:var(--shadow-sm);
-}
-.cities-table{width:100%;border-collapse:collapse;font-size:13.5px}
-.cities-table thead{background:var(--surface-2)}
-.cities-table th{
-  padding:13px 14px;text-align:left;font-weight:600;
-  color:var(--gold-deep);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
-  border-bottom:1px solid var(--border);white-space:nowrap;
-}
-.cities-table td{padding:14px;border-bottom:1px solid var(--border-soft);vertical-align:top}
-.cities-table tr{cursor:pointer;transition:background .15s}
-.cities-table tr:hover{background:var(--surface-2)}
-.cities-table tr:last-child td{border-bottom:none}
-.city-name{font-weight:700;color:var(--navy);font-size:14px}
-.city-country{font-size:11.5px;color:var(--text-muted);margin-top:2px}
-.theme-text{color:var(--text-muted);font-size:12.5px;line-height:1.5}
-.golf-tag{
-  display:inline-block;padding:3px 9px;border-radius:6px;font-size:11px;font-weight:600;
-  background:rgba(122,139,111,.12);color:var(--sage);
-}
-.golf-tag.limit{background:rgba(245,158,11,.12);color:#b45309}
-.year-tag{
-  display:inline-block;width:26px;height:26px;border-radius:50%;
-  background:var(--navy);color:var(--gold);
-  text-align:center;line-height:26px;font-weight:700;font-size:12px;
-}
+/* TAGS */
+.tag { display: inline-flex; align-items: center; padding: 3px 8px; border-radius: 9px; font-size: 11px; font-weight: 600; }
+.tag-grade-최우수 { background: #FEF9C3; color: #92400E; }
+.tag-grade-우수 { background: #DCFCE7; color: #166534; }
+.tag-grade-양호 { background: #DBEAFE; color: #1E40AF; }
+.tag-grade-보통 { background: #F3F4F6; color: #374151; }
+.tag-grade-주의,.tag-grade-하위,.tag-grade-최하위 { background: #FEE2E2; color: #991B1B; }
+.tag-season { background: #E0F2FE; color: #075985; }
+.tag-golf-yes { background: #DCFCE7; color: var(--green); }
+.tag-golf-no { background: #F9FAFB; color: var(--text-light); }
+.tag-type-overseas { background: #EEF2FF; color: #3730A3; }
+.tag-type-domestic { background: #FFF7ED; color: #9A3412; }
 
-/* Mobile cards (replace table) */
-@media(max-width:760px){
-  .cities-table-wrap{background:transparent;border:none;box-shadow:none}
-  .cities-table,.cities-table thead,.cities-table tbody,.cities-table tr,.cities-table td,.cities-table th{display:block;width:100%}
-  .cities-table thead{display:none}
-  .cities-table tr{
-    background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius);
-    padding:14px 16px;margin-bottom:10px;
-    display:grid;grid-template-columns:auto 1fr;gap:6px 14px;align-items:start;
-  }
-  .cities-table td{padding:0;border:none;display:contents}
-  .cities-table td:nth-child(1){grid-column:1;grid-row:1/3}
-  .cities-table td:nth-child(2){grid-column:2;grid-row:1}
-  .cities-table td:nth-child(3){grid-column:2;grid-row:2}
-  .cities-table td:nth-child(4){grid-column:1/3;grid-row:3;padding-top:6px}
-  .cities-table td:nth-child(5){grid-column:1/3;grid-row:4;display:flex;justify-content:space-between;align-items:center;padding-top:8px;border-top:1px dashed var(--border)}
-  .cities-table td:nth-child(6){display:none}
-}
+/* TABLE */
+.cities-table-wrap { overflow-x: auto; background: var(--bg2); border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow); }
+.cities-table { width: 100%; border-collapse: collapse; min-width: 700px; }
+.cities-table th { padding: 11px 13px; text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; color: rgba(255,255,255,.8); background: var(--navy); white-space: nowrap; }
+.cities-table td { padding: 10px 13px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.cities-table tr:last-child td { border-bottom: none; }
+.cities-table tr { cursor: pointer; transition: background .1s; }
+.cities-table tr:hover td { background: #f5f3ef; }
+td .city-name-main { font-size: 13px; font-weight: 700; color: var(--navy); }
+td .city-name-sub { font-size: 10.5px; color: var(--text-muted); }
+.cost-cell { font-weight: 700; color: var(--gold-deep); font-size: 13px; white-space: nowrap; }
+.idx-bar { display: flex; align-items: center; gap: 5px; }
+.idx-num { font-size: 12px; font-weight: 600; width: 24px; }
+.idx-track { flex: 1; height: 5px; background: #E5E7EB; border-radius: 3px; min-width: 44px; }
+.idx-fill { height: 5px; border-radius: 3px; background: var(--gold); }
+.golf-yes { color: var(--green); font-weight: 700; font-size: 13px; }
+.golf-no { color: var(--text-light); font-size: 12px; }
 
-/* ========== CITY DETAIL VIEW ========== */
-.detail-view{display:none}
-.detail-view.active{display:block;animation:fadeIn .3s ease}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+/* EMPTY */
+.empty-state { text-align: center; padding: 56px 16px; color: var(--text-muted); }
+.empty-state .empty-icon { font-size: 36px; margin-bottom: 12px; }
+.empty-state .empty-title { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 5px; }
 
-.detail-back{
-  display:inline-flex;align-items:center;gap:6px;
-  font-family:inherit;font-size:13.5px;font-weight:600;color:var(--text-muted);
-  background:none;border:none;cursor:pointer;padding:8px 0;
-  margin-bottom:14px;transition:color .2s;
-}
-.detail-back:hover{color:var(--navy)}
-.detail-back::before{content:"←";font-size:18px}
+/* ─── FEATURED ─── */
+.featured-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap: 18px; }
+.feature-card { background: var(--bg2); border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow); overflow: hidden; cursor: pointer; transition: all .2s; }
+.feature-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.feature-cover { background: linear-gradient(135deg, var(--navy) 0%, #2C5282 100%); padding: 18px; }
+.feature-flag { font-size: 12.5px; color: rgba(255,255,255,.8); margin-bottom: 7px; }
+.feature-city { font-family: 'Noto Serif KR',serif; font-size: 19px; font-weight: 700; color: #fff; }
+.feature-country { font-size: 12px; color: rgba(255,255,255,.65); margin-top: 3px; }
+.feature-body { padding: 14px; }
+.feature-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 6px 0; border-bottom: 1px solid var(--border); }
+.feature-row:last-of-type { border-bottom: none; }
+.feature-label { font-size: 11px; color: var(--text-muted); }
+.feature-val { font-size: 12.5px; font-weight: 600; color: var(--navy); text-align: right; max-width: 58%; }
+.feature-val.cost { color: var(--gold-deep); }
+.feature-cta { margin-top: 12px; text-align: center; background: var(--navy); color: #fff; border-radius: 9px; padding: 8px; font-size: 12.5px; font-weight: 600; cursor: pointer; transition: background .2s; }
+.feature-cta:hover { background: var(--navy-light); }
 
-.detail-hero{
-  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 80%);
-  color:#fff;border-radius:var(--radius-lg);
-  padding:42px 38px;margin-bottom:28px;
-  position:relative;overflow:hidden;
-}
-.detail-hero::before{
-  content:"";position:absolute;top:-50%;right:-15%;width:380px;height:380px;
-  background:radial-gradient(circle,rgba(201,169,97,.22) 0%,transparent 65%);
-}
-.detail-hero-eyebrow{font-size:11px;color:var(--gold);font-weight:700;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px}
-.detail-hero h2{font-family:'Noto Serif KR';font-weight:700;font-size:clamp(32px,4.5vw,46px);letter-spacing:-.025em;line-height:1.1}
-.detail-meta-line{margin-top:10px;color:var(--gold-soft);font-size:13px;font-weight:500;letter-spacing:.04em}
-.detail-desc{
-  margin-top:22px;max-width:780px;
-  font-size:15px;line-height:1.75;color:rgba(255,255,255,.88);font-weight:400;
-}
-.detail-quick-stats{
-  margin-top:26px;display:flex;flex-wrap:wrap;gap:20px 36px;position:relative;z-index:1;
-}
-.dqs{font-size:12px;color:var(--gold-soft);letter-spacing:.08em;text-transform:uppercase;font-weight:600}
-.dqs-v{font-family:'Noto Serif KR';font-size:20px;font-weight:600;color:#fff;margin-top:3px;letter-spacing:-.01em}
+/* ─── DETAIL ─── */
+.detail-back { display: inline-flex; align-items: center; gap: 6px; padding: 7px 13px; background: var(--bg2); border: 1.5px solid var(--border); border-radius: 9px; color: var(--navy); font-size: 13px; font-weight: 600; cursor: pointer; margin-bottom: 18px; transition: all .15s; font-family: inherit; }
+.detail-back:hover { border-color: var(--navy); }
+.detail-hero { background: linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%); border-radius: var(--radius); padding: 24px; color: #fff; margin-bottom: 18px; }
+.detail-hero-eyebrow { font-size: 11px; color: var(--gold-light); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 7px; }
+.detail-hero h2 { font-family: 'Noto Serif KR',serif; font-size: 20px; font-weight: 700; margin-bottom: 9px; }
+.detail-desc { font-size: 13.5px; color: rgba(255,255,255,.85); line-height: 1.75; }
+.detail-quick-stats { display: grid; grid-template-columns: repeat(auto-fit,minmax(110px,1fr)); gap: 10px; margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.15); }
+.dqs { font-size: 10.5px; color: rgba(255,255,255,.5); margin-bottom: 3px; }
+.dqs-v { font-size: 13.5px; font-weight: 700; color: #fff; }
+.detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+@media(max-width:680px){ .detail-grid { grid-template-columns:1fr; } }
+.cost-row { display: grid; grid-template-columns: 1fr auto auto; gap: 8px; align-items: center; padding: 9px 16px; border-bottom: 1px solid var(--border); font-size: 13px; }
+.cost-row:last-child { border-bottom: none; }
+.cost-row.total { background: #F0F4F8; font-weight: 700; font-size: 13.5px; }
+.cost-incl { font-size: 10.5px; padding: 2px 6px; border-radius: 5px; }
+.cost-incl.in { background: #DCFCE7; color: var(--green); }
+.cost-incl.out { background: #FEE2E2; color: var(--red); }
+.cost-amt { text-align: right; font-weight: 600; color: var(--gold-deep); white-space: nowrap; }
+.cost-note { font-size: 10.5px; color: var(--text-muted); }
+.golf-row { display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center; padding: 9px 16px; border-bottom: 1px solid var(--border); }
+.golf-row:last-child { border-bottom: none; }
+.golf-name { font-weight: 600; font-size: 13px; color: var(--navy); }
+.golf-feature { font-size: 11px; color: var(--text-muted); }
+.golf-fee { font-weight: 700; color: var(--gold-deep); font-size: 13px; text-align: right; }
+.golf-summary-box { margin: 4px 16px 12px; padding: 9px 13px; background: #F0F4F8; border-radius: 7px; font-size: 12.5px; color: var(--navy); }
+.sched-row { display: grid; grid-template-columns: 46px 1fr 1fr; gap: 8px; padding: 8px 16px; border-bottom: 1px solid var(--border); font-size: 12.5px; align-items: center; }
+.sched-row:last-child { border-bottom: none; }
+.sched-day { font-weight: 700; color: var(--navy); }
+.sched-am { color: var(--text-muted); }
+.tips-box { background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 11px; padding: 14px 18px; margin-top: 14px; }
+.tips-box h4 { font-size: 13.5px; font-weight: 700; color: #92400E; margin-bottom: 7px; }
+.tips-text { font-size: 12.5px; color: #78350F; line-height: 1.75; }
+.lodging-box { background: #EFF6FF; border-radius: 11px; padding: 14px 18px; margin-top: 14px; }
+.lodging-box h4 { font-size: 13.5px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+.lodging-box p { font-size: 12.5px; color: var(--text); line-height: 1.7; }
 
-/* Detail panels */
-.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-@media(max-width:900px){.detail-grid{grid-template-columns:1fr}}
-.panel{
-  background:var(--surface);border-radius:var(--radius-lg);
-  border:1px solid var(--border-soft);
-  padding:26px 28px;box-shadow:var(--shadow-sm);
-}
-.panel-head{
-  display:flex;justify-content:space-between;align-items:center;
-  margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--border-soft);
-}
-.panel-title{
-  font-family:'Noto Serif KR';font-weight:700;font-size:18px;color:var(--navy);
-  display:flex;align-items:center;gap:9px;
-}
-.panel-title .ic{
-  width:30px;height:30px;border-radius:9px;
-  background:linear-gradient(135deg,var(--gold-soft) 0%,var(--gold) 100%);
-  color:var(--navy);display:flex;align-items:center;justify-content:center;
-  font-size:15px;font-weight:700;
-}
-.cost-row, .golf-row, .sched-row{
-  display:grid;gap:10px;padding:12px 0;border-bottom:1px dotted var(--border);
-}
-.cost-row{grid-template-columns:1.4fr 0.7fr 1.3fr;align-items:start}
-.cost-row:last-child,.golf-row:last-child,.sched-row:last-child{border-bottom:none}
-.cost-row.total{background:linear-gradient(90deg,rgba(201,169,97,.10) 0%,rgba(201,169,97,.04) 100%);margin-top:6px;padding:14px 12px;border-radius:10px;border:none;grid-template-columns:1fr 1fr}
-.cost-item{font-weight:600;color:var(--text);font-size:13.5px}
-.cost-incl{font-size:11px;font-weight:700;letter-spacing:.06em;padding:3px 8px;border-radius:6px;display:inline-block;width:fit-content}
-.cost-incl.in{background:rgba(34,197,94,.10);color:#15803d}
-.cost-incl.out{background:rgba(245,158,11,.10);color:#b45309}
-.cost-amt{font-size:13px;color:var(--text-muted);font-weight:500}
-.cost-note{font-size:11.5px;color:var(--text-light);margin-top:3px}
-.cost-row.total .cost-item{font-family:'Noto Serif KR';font-size:14.5px;color:var(--navy)}
-.cost-row.total .cost-amt{color:var(--gold-deep);font-weight:700;font-size:15.5px;font-family:'Noto Serif KR'}
+/* ─── GOLF ─── */
+.golf-header { background: linear-gradient(135deg, var(--navy) 0%, #1B3A20 100%); border-radius: var(--radius); padding: 24px; margin-bottom: 20px; color: #fff; }
+.golf-header h2 { font-family: 'Noto Serif KR',serif; font-size: 20px; font-weight: 700; margin-bottom: 7px; }
+.golf-header p { font-size: 13px; color: rgba(255,255,255,.75); }
+.golf-cards { display: grid; grid-template-columns: repeat(auto-fill,minmax(290px,1fr)); gap: 16px; margin-bottom: 24px; }
+.golf-card { background: var(--bg2); border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; box-shadow: var(--shadow); }
+.golf-card-head { background: var(--navy); padding: 14px 16px; color: #fff; }
+.golf-card-region { font-size: 14px; font-weight: 700; }
+.golf-card-cost { font-size: 20px; font-weight: 800; color: var(--gold-light); margin: 3px 0; }
+.golf-card-cost-label { font-size: 10.5px; color: rgba(255,255,255,.5); }
+.golf-card-body { padding: 14px 16px; }
+.golf-card-feature { font-size: 12.5px; color: var(--text); line-height: 1.65; margin-bottom: 9px; }
+.golf-card-tips { font-size: 12px; color: var(--text-muted); line-height: 1.6; padding: 9px 11px; background: var(--bg); border-radius: 7px; }
 
-.golf-row{grid-template-columns:1.2fr 1.4fr 1fr}
-.golf-name{font-weight:700;color:var(--navy);font-size:13.5px}
-.golf-feature{font-size:12px;color:var(--text-muted);margin-top:3px}
-.golf-fee{font-size:13px;color:var(--gold-deep);font-weight:600}
-.golf-cart{font-size:11.5px;color:var(--text-muted);margin-top:2px}
-.golf-booking{font-size:11.5px;color:var(--sage);font-weight:600;text-align:right}
+/* ─── SETTINGS ─── */
+.settings-section { max-width: 520px; margin: 0 auto; }
+.settings-card { background: var(--bg2); border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow); margin-bottom: 16px; overflow: hidden; }
+.settings-card-head { padding: 12px 18px; background: var(--bg); border-bottom: 1px solid var(--border); font-weight: 700; font-size: 13.5px; color: var(--navy); }
+.settings-card-body { padding: 16px 18px; }
+.field { margin-bottom: 12px; }
+.field:last-child { margin-bottom: 0; }
+.field label { display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 4px; font-weight: 500; }
+.field input,.field textarea { width: 100%; padding: 8px 11px; border-radius: 7px; border: 1.5px solid var(--border); font-size: 13px; font-family: inherit; background: var(--bg); outline: none; transition: border-color .2s; }
+.field input:focus,.field textarea:focus { border-color: var(--navy); }
+.field textarea { min-height: 64px; resize: vertical; }
+.btn { display: inline-flex; align-items: center; gap: 5px; padding: 8px 15px; border-radius: 9px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all .18s; border: none; font-family: inherit; }
+.btn-navy { background: var(--navy); color: #fff; }
+.btn-navy:hover { background: var(--navy-light); }
+.btn-gold { background: var(--gold); color: var(--navy); }
+.btn-outline { background: transparent; border: 1.5px solid var(--border); color: var(--text); }
+.btn-outline:hover { border-color: var(--navy); color: var(--navy); }
+.btn-danger { background: #FEE2E2; color: var(--red); border: 1.5px solid #FECACA; }
+.btn-danger:hover { background: var(--red); color: #fff; }
+.btn-row { display: flex; gap: 7px; flex-wrap: wrap; }
+.sync-info-row { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+.sync-info-row:last-child { border-bottom: none; }
 
-.sched-row{grid-template-columns:36px 1fr 1fr}
-.sched-day{
-  width:30px;height:30px;border-radius:8px;
-  background:var(--navy);color:var(--gold);
-  display:flex;align-items:center;justify-content:center;
-  font-weight:700;font-size:13px;
-}
-.sched-am, .sched-pm{font-size:12.5px;line-height:1.55}
-.sched-pm{color:var(--text-muted)}
+/* ─── YEARLY PLAN ─── */
+.year-cell { padding: 14px 16px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); transition: background .12s; cursor: default; }
+.year-cell:hover { background: #f5f3ef; }
+.year-num { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 5px; }
+.year-theme { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.year-cities { font-size: 11.5px; color: var(--text-muted); line-height: 1.55; }
 
-.golf-summary{
-  margin-top:14px;padding:12px 14px;border-radius:10px;
-  background:rgba(201,169,97,.08);
-  border-left:3px solid var(--gold);
-  font-size:12.5px;color:var(--text);line-height:1.65;
-}
-.tips-box{
-  background:linear-gradient(135deg,var(--surface-2) 0%,#FAF5EA 100%);
-  border:1px solid var(--gold-soft);
-  border-radius:var(--radius);padding:22px 26px;margin-top:20px;
-}
-.tips-box h4{font-family:'Noto Serif KR';font-size:16px;color:var(--navy);margin-bottom:10px;display:flex;align-items:center;gap:8px}
-.tips-text{font-size:13.5px;line-height:1.75;color:var(--text)}
+/* ─── MODAL ─── */
+.modal-bg { position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 1000; display: none; align-items: center; justify-content: center; padding: 16px; }
+.modal-bg.active { display: flex; }
+.modal { background: var(--bg2); border-radius: var(--radius); width: 100%; max-width: 460px; max-height: 88vh; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(0,0,0,.3); }
+.modal-head { padding: 16px 18px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+.modal-title { font-size: 14.5px; font-weight: 700; color: var(--navy); }
+.modal-sub { font-size: 11.5px; color: var(--text-muted); }
+.modal-close { width: 26px; height: 26px; border-radius: 6px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 15px; color: var(--text-muted); background: var(--bg); border: none; font-family: inherit; }
+.modal-close:hover { background: #FEE2E2; color: var(--red); }
+.modal-body { padding: 14px 18px; overflow-y: auto; flex: 1; }
+.modal-footer { padding: 12px 18px; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; gap: 7px; }
 
-.lodging-box{
-  background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius);
-  padding:22px 26px;margin-top:14px;display:flex;gap:18px;align-items:flex-start;
-}
-.lodging-icon{
-  width:42px;height:42px;border-radius:11px;flex-shrink:0;
-  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);
-  color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:20px;
-}
-.lodging-content h4{font-family:'Noto Serif KR';font-size:15.5px;color:var(--navy);margin-bottom:5px}
-.lodging-content p{font-size:13px;color:var(--text);line-height:1.65}
+/* ─── TOAST ─── */
+.toast { position: fixed; bottom: 18px; right: 18px; z-index: 2000; background: var(--navy); color: #fff; padding: 10px 16px; border-radius: 9px; font-size: 13px; font-weight: 500; box-shadow: var(--shadow-md); transform: translateY(56px); opacity: 0; transition: all .3s; pointer-events: none; }
+.toast.show { transform: translateY(0); opacity: 1; }
+.toast.ok { background: var(--green); }
+.toast.err { background: var(--red); }
 
-/* ========== EDIT MODAL ========== */
-.modal-bg{
-  display:none;position:fixed;inset:0;z-index:100;
-  background:rgba(20,40,73,.45);backdrop-filter:blur(4px);
-  align-items:center;justify-content:center;padding:18px;
-  animation:fadeIn .2s;
-}
-.modal-bg.active{display:flex}
-.modal{
-  background:var(--surface);border-radius:var(--radius-lg);
-  width:100%;max-width:540px;max-height:88vh;overflow:auto;
-  box-shadow:var(--shadow-lg);
-  animation:slideUp .3s cubic-bezier(.2,.8,.2,1);
-}
-@keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:none;opacity:1}}
-.modal-header{
-  padding:22px 26px;border-bottom:1px solid var(--border-soft);
-  display:flex;justify-content:space-between;align-items:flex-start;gap:14px;
-  position:sticky;top:0;background:var(--surface);z-index:1;
-}
-.modal-title{font-family:'Noto Serif KR';font-size:18px;font-weight:700;color:var(--navy);line-height:1.3}
-.modal-sub{font-size:12px;color:var(--text-muted);margin-top:2px}
-.modal-close{
-  width:34px;height:34px;border-radius:10px;border:none;background:var(--surface-2);
-  cursor:pointer;font-size:18px;color:var(--text-muted);
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;transition:all .2s;
-}
-.modal-close:hover{background:var(--navy);color:var(--gold)}
-.modal-body{padding:22px 26px}
-.field{margin-bottom:16px}
-.field label{display:block;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:7px}
-.field input, .field textarea, .field select{
-  width:100%;padding:11px 14px;border-radius:10px;
-  border:1px solid var(--border);background:var(--bg-soft);
-  font-family:inherit;font-size:14px;color:var(--text);line-height:1.6;
-  transition:all .2s;resize:vertical;
-}
-.field input:focus, .field textarea:focus, .field select:focus{
-  outline:none;border-color:var(--gold);background:#fff;
-  box-shadow:0 0 0 3px rgba(201,169,97,.18);
-}
-.field textarea{min-height:80px}
-.modal-foot{
-  padding:18px 26px;border-top:1px solid var(--border-soft);
-  display:flex;gap:10px;justify-content:flex-end;
-  background:var(--surface-2);
-  position:sticky;bottom:0;
-}
-.btn{
-  padding:11px 22px;border-radius:11px;font-family:inherit;font-size:14px;font-weight:600;
-  cursor:pointer;transition:all .2s;border:1px solid transparent;
-}
-.btn-primary{background:var(--navy);color:var(--gold);border-color:var(--navy)}
-.btn-primary:hover{background:var(--navy-deep);transform:translateY(-1px);box-shadow:0 6px 14px -6px rgba(20,40,73,.5)}
-.btn-ghost{background:transparent;color:var(--text-muted);border-color:var(--border)}
-.btn-ghost:hover{background:var(--surface);color:var(--text)}
-.btn-danger{background:transparent;color:var(--burgundy);border-color:var(--border)}
-.btn-danger:hover{background:rgba(122,45,63,.06)}
+/* ─── EDIT MODE ─── */
+body.edit-mode .editable { outline: 2px dashed rgba(201,169,97,.5); border-radius: 4px; }
+body.edit-mode .editable:hover { outline-color: var(--gold); background: rgba(201,169,97,.05); cursor: pointer; }
 
-/* ========== EDIT MODE TOGGLE ========== */
-.edit-mode body, body.edit-mode .editable{cursor:default}
-body.edit-mode .editable{
-  position:relative;
-  outline:1.5px dashed transparent;outline-offset:3px;border-radius:6px;
-  transition:outline-color .2s,background .2s;
+@media(max-width:560px){
+  .container { padding: 14px 10px; }
+  .hero-title { font-size: 17px; }
+  .stats-grid { grid-template-columns: repeat(2,1fr); }
+  .city-grid { grid-template-columns: 1fr; }
+  .featured-grid { grid-template-columns: 1fr; }
+  .golf-cards { grid-template-columns: 1fr; }
 }
-body.edit-mode .editable:hover{outline-color:var(--gold);background:rgba(201,169,97,.06)}
-body.edit-mode .editable::after{
-  content:"✎";position:absolute;top:-8px;right:-8px;
-  width:22px;height:22px;border-radius:50%;
-  background:var(--gold);color:#fff;font-size:11px;
-  display:none;align-items:center;justify-content:center;
-  box-shadow:0 4px 8px rgba(201,169,97,.4);
-}
-body.edit-mode .editable:hover::after{display:flex}
-body.edit-mode .feature-card:hover, body.edit-mode .year-card:hover, body.edit-mode .cities-table tr:hover{outline:none;background:initial}
-
-.edit-banner{
-  display:none;position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
-  z-index:60;background:var(--navy);color:#fff;
-  padding:12px 22px;border-radius:999px;font-size:13px;font-weight:600;
-  box-shadow:0 12px 28px -8px rgba(20,40,73,.5);
-  gap:10px;align-items:center;letter-spacing:.02em;
-}
-body.edit-mode .edit-banner{display:flex}
-.edit-banner b{color:var(--gold);font-weight:700}
-
-/* ========== SETTINGS VIEW ========== */
-.settings-card{
-  background:var(--surface);border-radius:var(--radius-lg);
-  border:1px solid var(--border-soft);padding:28px;margin-bottom:18px;
-  box-shadow:var(--shadow-sm);
-}
-.settings-card h3{font-family:'Noto Serif KR';font-size:19px;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:10px}
-.settings-card p{font-size:13.5px;color:var(--text-muted);line-height:1.7;margin-bottom:18px}
-.settings-actions{display:flex;flex-wrap:wrap;gap:10px}
-
-.sync-badge{
-  display:inline-block;margin-left:8px;padding:3px 10px;border-radius:6px;
-  font-family:'Pretendard';font-size:11px;font-weight:700;letter-spacing:.08em;vertical-align:middle;
-}
-.sync-badge.off{background:rgba(122,45,63,.10);color:var(--burgundy)}
-.sync-badge.on{background:rgba(34,197,94,.12);color:#15803d}
-.sync-badge.syncing{background:rgba(245,158,11,.15);color:#b45309}
-
-.sync-steps{margin:6px 0 18px 18px;padding:0;font-size:13px;color:var(--text);line-height:1.85}
-.sync-steps li{margin-bottom:6px}
-.sync-steps li b{color:var(--navy)}
-.link{color:var(--gold-deep);font-weight:700;text-decoration:underline}
-.link:hover{color:var(--navy)}
-
-.sync-info{
-  background:linear-gradient(135deg,var(--surface-2) 0%,#FAF5EA 100%);
-  border:1px solid var(--gold-soft);
-  border-radius:var(--radius);padding:14px 18px;margin-bottom:14px;
-}
-.sync-info-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;font-size:13px}
-.sync-info-row span{color:var(--text-muted)}
-.sync-info-row b{color:var(--navy);font-weight:600}
-.mono{font-family:'SF Mono',Monaco,Consolas,monospace;font-size:11.5px}
-
-.sync-code-box{margin-bottom:14px}
-.sync-code-box label{display:block;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:7px}
-.sync-code-row{display:flex;gap:8px}
-.sync-code-row input{
-  flex:1;padding:11px 14px;border-radius:10px;border:1px solid var(--border);
-  background:var(--bg-soft);font-family:'SF Mono',Monaco,Consolas,monospace;font-size:11.5px;
-  color:var(--text);overflow:hidden;text-overflow:ellipsis;
-}
-.sync-warn{font-size:11.5px;color:var(--burgundy);margin-top:8px;font-weight:500}
-
-.toast{
-  position:fixed;bottom:90px;left:50%;transform:translateX(-50%);
-  background:var(--navy);color:#fff;padding:12px 22px;border-radius:11px;
-  font-size:13.5px;font-weight:500;letter-spacing:.01em;
-  box-shadow:0 12px 28px -8px rgba(20,40,73,.5);z-index:200;
-  opacity:0;transition:all .3s;pointer-events:none;
-}
-.toast.show{opacity:1;transform:translateX(-50%) translateY(-6px)}
-.toast.ok{background:linear-gradient(135deg,#15803d,#166534)}
-.toast.err{background:linear-gradient(135deg,var(--burgundy),#5a1f2d)}
-
-.view{display:none}
-.view.active{display:block;animation:fadeIn .25s ease}
-
-@media(max-width:600px){
-  .hero{padding-top:32px}
-  .section{padding:28px 18px}
-  .panel{padding:22px 20px}
-  .detail-hero{padding:32px 24px}
-  .top-actions .sync-pill{display:none}
-  .topbar{padding:12px 18px}
-  .nav-tabs{padding:10px 18px 0}
-  .brand-sub{display:none}
-}
-
-/* small print */
-.small-print{font-size:11.5px;color:var(--text-light);margin-top:24px;text-align:center;line-height:1.65;padding:0 22px 40px}
-.footer{padding:30px 22px 60px;text-align:center}
-.footer-mark{font-family:'Noto Serif KR';color:var(--navy);font-weight:600;font-size:14px;letter-spacing:.02em}
-.footer-sub{font-size:11.5px;color:var(--text-light);margin-top:6px;letter-spacing:.06em}
-.divider-orn{
-  display:flex;align-items:center;justify-content:center;gap:14px;margin:28px 0;
-  color:var(--gold);font-size:14px;
-}
-.divider-orn::before, .divider-orn::after{content:"";flex:1;max-width:60px;height:1px;background:var(--gold-soft)}
-
-input[type="file"]{display:none}
 </style>
+<script src="data.js"></script>
 </head>
 <body>
 
-<header class="topbar">
-  <div class="topbar-inner">
-    <div class="brand">
-      <div class="brand-mark">유</div>
-      <div class="brand-text">
-        <div class="brand-title">유재진 한달살기</div>
-        <div class="brand-sub">Global Aging in Place</div>
-      </div>
-    </div>
-    <div class="top-actions">
-      <div class="sync-pill" id="syncPill"><span class="sync-dot" id="syncDot"></span><span id="syncText">자동 저장됨</span></div>
-      <button class="icon-btn" id="editToggle" title="편집 모드 켜기/끄기" aria-label="편집 모드">✎</button>
-      <button class="icon-btn" id="settingsBtn" title="설정·백업·동기화" aria-label="설정">⚙</button>
-    </div>
-  </div>
+<div class="topbar">
+  <div class="topbar-brand">유재진 <span>한달살기</span></div>
   <nav class="nav-tabs">
-    <button class="nav-tab active" data-view="dashboard">대시보드</button>
-    <button class="nav-tab" data-view="featured">7대 거점 도시</button>
-    <button class="nav-tab" data-view="cities">100 도시 리스트</button>
-    <button class="nav-tab" data-view="settings">설정 · 동기화</button>
+    <button class="nav-tab active" data-view="dashboard">🏠 대시보드</button>
+    <button class="nav-tab" data-view="explore">🔍 도시탐색</button>
+    <button class="nav-tab" data-view="featured">⭐ 거점도시</button>
+    <button class="nav-tab" data-view="golf">⛳ 골프투어</button>
+    <button class="nav-tab" data-view="settings">⚙️ 설정</button>
   </nav>
-</header>
-
-<!-- ============ DASHBOARD ============ -->
-<main>
-<section class="view active" id="view-dashboard">
-  <div class="hero">
-    <div class="hero-eyebrow">10개년 마스터플랜 · 2026 ~ 2035</div>
-    <h1 class="serif" data-edit="title">유재진<br><span class="accent">한달살기</span> 마스터플랜</h1>
-    <p class="hero-lede" data-edit="subtitle">은퇴 후의 삶을 가장 우아하게 설계하는 방법 — 50개 국가, 100개 도시, 10년간의 여정. 시니어 액티브 라이프스타일에 최적화된 글로벌 에이징 인 플레이스 큐레이션.</p>
-    <div class="hero-meta">
-      <span>업데이트 <b id="updatedDate">2026-05-18</b></span>
-      <span>제작 <b>똑비(토끼와두꺼비)</b></span>
-      <span>대상 <b id="targetText">5070 액티브 시니어</b></span>
-    </div>
+  <div class="topbar-right">
+    <div class="sync-badge"><div class="sync-dot" id="syncDot"></div><span id="syncText">저장됨</span></div>
+    <button class="ic-btn" id="editToggle" title="편집 모드 (Ctrl+E)">✎</button>
   </div>
+</div>
 
-  <div class="stats">
-    <div class="stat-card">
-      <div class="stat-label">대상 도시</div>
-      <div class="stat-value" id="statCities">100</div>
-      <div class="stat-sub">개 도시 큐레이션</div>
+<!-- ======= DASHBOARD ======= -->
+<div class="view active" id="view-dashboard">
+  <div class="container">
+    <div class="hero-band editable" data-edit="header">
+      <div class="hero-eyebrow">2026 · Global Lifestyle · Golf Tour</div>
+      <div class="hero-title" id="heroTitle">유재진 한달살기 & 골프투어 마스터플랜</div>
+      <div class="hero-sub">해외 100대 도시 · 국내 100대 도시 통합 분석<br>5070 액티브 시니어를 위한 체류형 여행 & 골프 큐레이션</div>
+      <div class="hero-meta">업데이트: <span id="updatedDate">2026-07-11</span> · 언급지수 35% · 안전지수 25% · 체류비 25% · 골프경제성 15% 가중 종합평가</div>
     </div>
-    <div class="stat-card">
-      <div class="stat-label">진출 국가</div>
-      <div class="stat-value" id="statCountries">50</div>
-      <div class="stat-sub">개국 글로벌 네트워크</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">운영 기간</div>
-      <div class="stat-value" id="statYears">10</div>
-      <div class="stat-sub">개년 마스터플랜</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">주요 타겟</div>
-      <div class="stat-value serif" style="font-size:22px">5070</div>
-      <div class="stat-sub">액티브 시니어</div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="section-head">
-      <div>
-        <h2 class="section-title">연차별 확장 계획<span class="badge">10년</span></h2>
-        <div class="section-desc">우선순위 · 권역 · 거점 도시 · 예상 비용 한눈에</div>
+    <div class="stats-grid" id="dashStats"></div>
+    <div class="two-col">
+      <div class="panel">
+        <div class="panel-head"><div class="panel-head-title">🌍 해외 Top 10</div><div class="panel-head-sub">종합평가순</div></div>
+        <div id="overseasTop10"></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><div class="panel-head-title">🇰🇷 국내 Top 10</div><div class="panel-head-sub">종합평가순</div></div>
+        <div id="domesticTop10"></div>
       </div>
     </div>
-    <div class="timeline" id="yearlyContainer"></div>
-  </div>
-
-  <div class="section">
-    <div class="section-head">
-      <div>
-        <h2 class="section-title">7대 거점 도시<span class="badge">PREMIUM</span></h2>
-        <div class="section-desc">상세 한달살기 플랜이 준비된 명소</div>
-      </div>
-    </div>
-    <div class="featured-grid" id="featuredContainer"></div>
-  </div>
-
-  <div class="small-print">
-    ※ 모든 비용은 2인 기준 / 항공권 별도 / 식비·개인 경비 포함 추정치 / 골프 그린피는 현지 시세 기준<br>
-    Source: 똑비(토끼와두꺼비) 공식 서비스 자료 · 중앙일보 · ZDNet Korea · 브라보마이라이프 · Natixis Global Retirement Index 2025
-  </div>
-</section>
-
-<!-- ============ FEATURED ============ -->
-<section class="view" id="view-featured">
-  <div class="section">
-    <div class="section-head">
-      <div>
-        <h2 class="section-title">7대 거점 도시 비교</h2>
-        <div class="section-desc">숙소비 · 골프 · 한달 총비용 · 추천도</div>
-      </div>
-    </div>
-    <div class="featured-grid" id="featuredFullContainer"></div>
-  </div>
-</section>
-
-<!-- ============ 100 CITIES ============ -->
-<section class="view" id="view-cities">
-  <div class="section">
-    <div class="section-head">
-      <div>
-        <h2 class="section-title">전체 100도시 리스트</h2>
-        <div class="section-desc">연차 · 권역 · 골프 · 운영 분기로 필터링</div>
-      </div>
-    </div>
-
-    <div class="cities-toolbar">
-      <div class="search-box">
-        <input type="text" id="citySearch" placeholder="도시명·국가·테마로 검색…">
-      </div>
-      <button class="filter-chip active" data-fyear="all">전체</button>
-      <button class="filter-chip" data-fyear="1">1년차</button>
-      <button class="filter-chip" data-fyear="2">2년차</button>
-      <button class="filter-chip" data-fyear="3">3년차</button>
-      <button class="filter-chip" data-fyear="4">4년차</button>
-      <button class="filter-chip" data-fyear="5">5년차+</button>
-    </div>
-
-    <div class="cities-table-wrap">
-      <table class="cities-table">
-        <thead>
-          <tr>
-            <th>연차</th>
-            <th>도시</th>
-            <th>테마</th>
-            <th>운영</th>
-            <th>비용 (월)</th>
-            <th>골프</th>
-          </tr>
-        </thead>
-        <tbody id="citiesTbody"></tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- ============ DETAIL VIEW ============ -->
-<section class="view" id="view-detail">
-  <div class="section">
-    <button class="detail-back" id="detailBack">목록으로 돌아가기</button>
-    <div id="detailContainer"></div>
-  </div>
-</section>
-
-<!-- ============ SETTINGS ============ -->
-<section class="view" id="view-settings">
-  <div class="section">
-    <div class="section-head">
-      <div>
-        <h2 class="section-title">설정 · 동기화 · 백업</h2>
-        <div class="section-desc">기기 간 데이터 연동과 백업·복원</div>
-      </div>
-    </div>
-
-    <div class="settings-card" id="cloudSyncCard">
-      <h3>☁️ 자동 클라우드 동기화 <span id="syncStateBadge" class="sync-badge off">OFF</span></h3>
-      <p>한 기기에서 수정하면 <b>5초 이내</b>에 모든 기기에 자동 반영됩니다. 비공개 GitHub Gist에 자동 저장(본인만 접근 가능). 한 번만 셋업하면 됩니다.</p>
-
-      <div id="syncStep1">
-        <ol class="sync-steps">
-          <li><b>GitHub Token 발급:</b> <a href="https://github.com/settings/tokens/new?scopes=gist&description=Ddokbi+Sync" target="_blank" rel="noopener" class="link">GitHub Token 발급 페이지 열기</a> → 만료일 "No expiration" → <b>"Generate token"</b> → 발급된 토큰 복사 (<b>ghp_</b>로 시작)</li>
-          <li>아래에 토큰 붙여넣기 후 "동기화 시작" 클릭 → 자동으로 비공개 Gist 생성 + 동기화 시작</li>
-          <li>다른 기기에서는 발급된 <b>동기화 코드</b>를 붙여넣기만 하면 즉시 같은 데이터 사용</li>
-        </ol>
-        <div class="field"><label>GitHub Personal Access Token</label>
-          <input type="password" id="ghToken" placeholder="ghp_..." autocomplete="off">
-        </div>
-        <div class="field"><label>또는 동기화 코드 (다른 기기에서 발급된 것)</label>
-          <input type="text" id="ghSyncCode" placeholder="dkbiSync:..." autocomplete="off">
-        </div>
-        <div class="settings-actions">
-          <button class="btn btn-primary" id="btnSyncStart">☁️ 동기화 시작</button>
-        </div>
-      </div>
-
-      <div id="syncStep2" style="display:none">
-        <div class="sync-info">
-          <div class="sync-info-row"><span>상태</span><b id="syncStatusText">연결됨</b></div>
-          <div class="sync-info-row"><span>마지막 동기화</span><b id="syncLastTime">방금 전</b></div>
-          <div class="sync-info-row"><span>Gist ID</span><b id="syncGistId" class="mono">-</b></div>
-        </div>
-        <div class="sync-code-box">
-          <label>동기화 코드 (다른 기기에 붙여넣어 사용)</label>
-          <div class="sync-code-row">
-            <input type="text" id="syncCodeOut" readonly>
-            <button class="btn btn-primary" id="btnCopyCode">복사</button>
-          </div>
-          <p class="sync-warn">⚠️ 이 코드에는 토큰이 포함되어 있습니다. 본인 기기에만 입력하세요.</p>
-        </div>
-        <div class="settings-actions">
-          <button class="btn btn-primary" id="btnSyncNow">↻ 지금 동기화</button>
-          <button class="btn btn-ghost" id="btnSyncStop">동기화 끄기</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="settings-card">
-      <h3>📥 수동 백업·복원 (JSON)</h3>
-      <p>자동 동기화 없이 수동으로 백업/복원할 때 사용. 파일명: <b>똑비_한달살기_데이터.json</b></p>
-      <div class="settings-actions">
-        <button class="btn btn-primary" id="btnExport">📥 데이터 내보내기 (JSON)</button>
-        <button class="btn btn-primary" id="btnImport">📤 데이터 가져오기 (JSON)</button>
-        <input type="file" id="fileImport" accept=".json,application/json">
-      </div>
-    </div>
-
-    <div class="settings-card">
-      <h3>✎ 직접 수정 (수동 입력)</h3>
-      <p>편집 모드 (✎ 버튼)를 켜면 모든 텍스트·표·도시 정보를 직접 클릭해 수정할 수 있습니다. 엑셀 스캔본의 데이터를 수동으로 옮겨 넣거나, 비용·일정·골프 정보를 자유롭게 갱신하세요. 모든 수정은 자동 저장됩니다.</p>
-      <div class="settings-actions">
-        <button class="btn btn-primary" id="btnEditMode">✎ 편집 모드 켜기</button>
-      </div>
-    </div>
-
-    <div class="settings-card">
-      <h3>🗂 데이터 초기화</h3>
-      <p>모든 수정 내용을 되돌리고 초기 마스터플랜 데이터로 복원합니다. (백업 후 사용 권장)</p>
-      <div class="settings-actions">
-        <button class="btn btn-danger" id="btnReset">⟳ 초기 데이터로 복원</button>
-      </div>
-    </div>
-
-    <div class="settings-card">
-      <h3>📱 모바일 사용 안내</h3>
-      <p>이 앱은 PC와 모바일(iOS·Android) 브라우저 모두에서 작동합니다. 모바일에서는 브라우저 메뉴의 <b>"홈 화면에 추가"</b>를 누르면 앱처럼 사용할 수 있습니다. 동기화는 <b>Google Drive에 JSON 파일 저장 → 다른 기기에서 불러오기</b>로 진행됩니다.</p>
-    </div>
-  </div>
-</section>
-</main>
-
-<!-- ============ FOOTER ============ -->
-<footer class="footer">
-  <div class="divider-orn">✦</div>
-  <div class="footer-mark">유재진 한달살기 · 에이징 인 플레이스</div>
-  <div class="footer-sub">CRAFTED FOR ACTIVE SENIOR LIFESTYLE · 2026</div>
-</footer>
-
-<!-- ============ MODAL ============ -->
-<div class="modal-bg" id="modalBg">
-  <div class="modal" role="dialog" aria-modal="true">
-    <div class="modal-header">
-      <div>
-        <div class="modal-title" id="modalTitle">편집</div>
-        <div class="modal-sub" id="modalSub"></div>
-      </div>
-      <button class="modal-close" id="modalClose" aria-label="닫기">×</button>
-    </div>
-    <div class="modal-body" id="modalBody"></div>
-    <div class="modal-foot">
-      <button class="btn btn-ghost" id="modalCancel">취소</button>
-      <button class="btn btn-primary" id="modalSave">저장</button>
+    <div class="section-title">🌿 계절별 추천 <span class="badge">클릭 → 탐색</span></div>
+    <div class="season-grid" id="seasonGrid"></div>
+    <div class="section-title">⛳ 골프투어 가성비 비교</div>
+    <div id="golfTopCards" style="margin-bottom:20px"></div>
+    <div class="section-title">💎 10개년 마스터플랜</div>
+    <div class="panel" style="margin-bottom:24px">
+      <div id="yearlyContainer" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:0"></div>
     </div>
   </div>
 </div>
 
-<div class="edit-banner">편집 모드 <b>ON</b> — 항목 클릭 시 수정 · 모든 변경은 자동 저장</div>
+<!-- ======= EXPLORE ======= -->
+<div class="view" id="view-explore">
+  <div class="container">
+    <div class="section-title">🔍 도시 탐색 <span class="badge">해외 100 + 국내 100</span></div>
+    <div class="filter-bar">
+      <input type="text" class="filter-search" id="exploreSearch" placeholder="🔍 도시명 · 국가 · 테마 검색…">
+      <div class="filter-row">
+        <span class="filter-label">국내외</span>
+        <div id="filterType">
+          <span class="filter-chip active" data-val="all">전체</span>
+          <span class="filter-chip" data-val="overseas">해외</span>
+          <span class="filter-chip" data-val="domestic">국내</span>
+        </div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">계절</span>
+        <div id="filterSeason">
+          <span class="filter-chip active" data-val="all">전체</span>
+          <span class="filter-chip" data-val="봄">🌸 봄</span>
+          <span class="filter-chip" data-val="여름">☀️ 여름</span>
+          <span class="filter-chip" data-val="가을">🍂 가을</span>
+          <span class="filter-chip" data-val="겨울">❄️ 겨울</span>
+        </div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">대륙/권역</span>
+        <div id="filterContinent">
+          <span class="filter-chip active" data-val="all">전체</span>
+        </div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">가격대</span>
+        <div id="filterPrice">
+          <span class="filter-chip active" data-val="all">전체</span>
+          <span class="filter-chip" data-val="300">300만 이하</span>
+          <span class="filter-chip" data-val="300-400">300~400만</span>
+          <span class="filter-chip" data-val="400-500">400~500만</span>
+          <span class="filter-chip" data-val="500-700">500~700만</span>
+          <span class="filter-chip" data-val="700+">700만 이상</span>
+        </div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">골프</span>
+        <div id="filterGolf">
+          <span class="filter-chip active" data-val="all">전체</span>
+          <span class="filter-chip golf-on" data-val="yes">⛳ 골프 가능</span>
+          <span class="filter-chip" data-val="no">골프 제한</span>
+        </div>
+        <span class="filter-label" style="margin-left:10px">종합평가</span>
+        <div id="filterGrade">
+          <span class="filter-chip active" data-val="all">전체</span>
+          <span class="filter-chip" data-val="최우수">최우수</span>
+          <span class="filter-chip" data-val="우수">우수</span>
+          <span class="filter-chip" data-val="양호">양호</span>
+          <span class="filter-chip" data-val="보통이하">보통 이하</span>
+        </div>
+      </div>
+    </div>
+    <div class="explore-toolbar">
+      <div class="result-count"><strong id="resultCount">200</strong>개 도시</div>
+      <div style="display:flex;gap:7px;align-items:center">
+        <select class="sort-select" id="sortSelect">
+          <option value="rank">종합평가순</option>
+          <option value="cost-asc">가격 낮은순</option>
+          <option value="cost-desc">가격 높은순</option>
+          <option value="mention">언급지수순</option>
+          <option value="safety">안전지수순</option>
+        </select>
+        <div class="view-toggle">
+          <button class="view-btn active" id="btnCardView" title="카드뷰">⊞</button>
+          <button class="view-btn" id="btnTableView" title="테이블뷰">☰</button>
+        </div>
+      </div>
+    </div>
+    <div id="cityCardGrid" class="city-grid"></div>
+    <div id="cityTableWrap" class="cities-table-wrap" style="display:none">
+      <table class="cities-table">
+        <thead><tr>
+          <th>순위</th><th>도시</th><th>계절</th><th>대륙/권역</th>
+          <th>월 체류비</th><th>언급</th><th>안전</th><th>골프</th><th>평가</th>
+        </tr></thead>
+        <tbody id="cityTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ======= FEATURED ======= -->
+<div class="view" id="view-featured">
+  <div class="container">
+    <div class="section-title">⭐ 8대 거점도시 <span class="badge">상세 플랜 완비</span></div>
+    <div class="featured-grid" id="featuredGrid"></div>
+  </div>
+</div>
+
+<!-- ======= DETAIL ======= -->
+<div class="view" id="view-detail">
+  <div class="container">
+    <button class="detail-back" id="detailBack">← 거점도시 목록</button>
+    <div id="detailContainer"></div>
+  </div>
+</div>
+
+<!-- ======= GOLF ======= -->
+<div class="view" id="view-golf">
+  <div class="container">
+    <div class="golf-header">
+      <h2>⛳ 골프투어 연계 장기 체류 비교</h2>
+      <p>월 8회(주 2회) 라운드 기준 · 2인 한달살기 최적 조합 분석</p>
+    </div>
+    <div class="section-title">지역별 골프비용 & 특징</div>
+    <div class="golf-cards" id="golfCards"></div>
+    <div class="section-title">⛳ 골프 가능 해외 Top 20</div>
+    <div id="golfCitiesWrap" class="cities-table-wrap" style="margin-bottom:24px">
+      <table class="cities-table">
+        <thead><tr><th>순위</th><th>도시</th><th>대륙</th><th>계절</th><th>월 체류비</th><th>평가</th></tr></thead>
+        <tbody id="golfCitiesBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ======= SETTINGS ======= -->
+<div class="view" id="view-settings">
+  <div class="container">
+    <div class="settings-section">
+      <div class="section-title">⚙️ 설정</div>
+      <div class="settings-card">
+        <div class="settings-card-head">데이터 관리</div>
+        <div class="settings-card-body">
+          <div class="btn-row">
+            <button class="btn btn-outline" id="btnExport">📥 JSON 내보내기</button>
+            <button class="btn btn-outline" id="btnImport">📤 JSON 가져오기</button>
+            <button class="btn btn-danger" id="btnReset">↺ 초기화</button>
+          </div>
+          <input type="file" id="fileImport" accept=".json" style="display:none">
+        </div>
+      </div>
+      <div class="settings-card">
+        <div class="settings-card-head">GitHub Gist 자동 동기화</div>
+        <div class="settings-card-body">
+          <div id="syncStep1">
+            <div class="field">
+              <label>GitHub Personal Access Token</label>
+              <input type="password" id="ghToken" placeholder="ghp_...">
+            </div>
+            <div class="field">
+              <label>동기화 코드 (다른 기기에서 발급된 경우)</label>
+              <input type="text" id="ghSyncCode" placeholder="yjjSync:...">
+            </div>
+            <button class="btn btn-navy" id="btnSyncStart">☁️ 동기화 시작</button>
+          </div>
+          <div id="syncStep2" style="display:none">
+            <div class="sync-info-row"><span>Gist ID</span><span id="syncGistId" style="font-size:11.5px;color:var(--text-muted)"></span></div>
+            <div class="sync-info-row"><span>마지막 동기화</span><span id="syncLastTime">-</span></div>
+            <div class="sync-info-row"><span>상태</span><span id="syncStatusText" style="font-size:12px;color:var(--text-muted)">-</span></div>
+            <div class="field" style="margin-top:12px">
+              <label>동기화 코드 (다른 기기에 붙여넣기)</label>
+              <input type="text" id="syncCodeOut" readonly>
+            </div>
+            <div class="btn-row">
+              <button class="btn btn-outline" id="btnCopyCode">📋 코드 복사</button>
+              <button class="btn btn-outline" id="btnSyncNow">🔄 즉시 동기화</button>
+              <button class="btn btn-danger" id="btnSyncStop">동기화 끄기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="settings-card">
+        <div class="settings-card-head">편집 모드</div>
+        <div class="settings-card-body">
+          <button class="btn btn-outline" id="btnEditMode">✎ 편집 모드 켜기/끄기</button>
+          <p style="margin-top:9px;font-size:12px;color:var(--text-muted)">편집 모드 중 항목 클릭 시 수정 가능 · Ctrl+E 단축키</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EDIT MODAL -->
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+    <div class="modal-head">
+      <div><div class="modal-title" id="modalTitle">편집</div><div class="modal-sub" id="modalSub"></div></div>
+      <button class="modal-close" id="modalClose">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" id="modalCancel">취소</button>
+      <button class="btn btn-navy" id="modalSave">저장</button>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
-
-<script src="data.js"></script>
 <script src="app.js"></script>
-
 </body>
 </html>
