@@ -347,7 +347,7 @@ window.INITIAL_DATA = {
         {item:"숙소 (선테크/다운타운 콘도)", included:true, amount:800000, note:"月 RM2,500~3,500 1베드"},
         {item:"식비 (2인·호커센터)", included:true, amount:600000, note:"호커 한끼 2,000~4,000원"},
         {item:"골프 무제한 패키지", included:true, amount:600000, note:"月 RM1,500~2,500 멤버십"},
-        {item:"싱가포르 원정 (주 1~2회)", included:true, amount:400000, note:"지하철 통근·쇼핑"),
+        {item:"싱가포르 원정 (주 1~2회)", included:true, amount:400000, note:"지하철 통근·쇼핑"},
         {item:"교통 (그랩·버스)", included:true, amount:200000, note:"싱가포르↔JB 버스 3,000원"},
         {item:"의료 (국제병원)", included:true, amount:200000, note:"싱가포르 대비 1/3"},
         {item:"항공 (인천↔싱가포르/JB)", included:false, amount:600000, note:"싱가포르 경유 또는 JB 직항"},
@@ -448,7 +448,7 @@ window.INITIAL_DATA = {
     algarve: {
       costs: [
         {item:"숙소 (빌라모우라 아파트)", included:true, amount:1500000, note:"€850~1,200/월 1베드"},
-        {item:"식비 (2인)", included:true, amount:1100000, note:"신선 해산물 저렴, 와인 5유로"),
+        {item:"식비 (2인)", included:true, amount:1100000, note:"신선 해산물 저렴, 와인 5유로"},
         {item:"골프 그린피 (월 8회)", included:true, amount:1800000, note:"€70~150/회, 겨울 할인"},
         {item:"렌터카", included:true, amount:350000, note:"€180/월, 코스 이동 필수"},
         {item:"요트·레저", included:true, amount:300000, note:"카약·동굴 투어 €30~80"},
