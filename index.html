@@ -405,12 +405,10 @@ body.edit-mode .editable:hover { outline-color: var(--gold); background: rgba(20
 <!-- ======= DASHBOARD ======= -->
 <div class="view active" id="view-dashboard">
   <div class="container">
-    <div class="hero-band editable" data-edit="header">
+    <div class="hero-band editable" data-edit="header" style="position:relative">
+      <button class="btn btn-gold" id="btnMasterPlan" style="position:absolute;top:16px;right:16px;font-size:12px;padding:6px 14px;white-space:nowrap">📋 10개년 마스터플랜</button>
       <div class="hero-eyebrow">2026 · Global Lifestyle · Golf Tour</div>
-      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:7px">
-        <div class="hero-title" id="heroTitle" style="margin-bottom:0">유재진 한달살기 & 골프투어 마스터플랜</div>
-        <button class="btn btn-gold" id="btnMasterPlan" style="font-size:12px;padding:6px 14px;white-space:nowrap;flex-shrink:0">📋 10개년 마스터플랜</button>
-      </div>
+      <div class="hero-title" id="heroTitle">유재진 한달살기 & 골프투어 마스터플랜</div>
       <div class="hero-sub">해외 100대 도시 · 국내 100대 도시 통합 분석<br>5070 액티브 시니어를 위한 체류형 여행 & 골프 큐레이션</div>
       <div class="hero-meta">업데이트: <span id="updatedDate">2026-07-11</span> · 언급지수 35% · 안전지수 25% · 체류비 25% · 골프경제성 15% 가중 종합평가</div>
     </div>
